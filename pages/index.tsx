@@ -11,7 +11,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="">
+      <main className="bg-bg2 text-text">
         <DDText size="headline" weight="light">
           Welcome to my dynamic web page !
         </DDText>
