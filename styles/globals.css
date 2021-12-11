@@ -4,6 +4,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "../assets/css/palette.css";
+
 :root {
   --primary: var(--l-primary);
   --danger: var(--l-danger);
