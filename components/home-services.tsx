@@ -7,12 +7,11 @@ const HomeServices = ({}: {}) => {
       <DDText size="headline" className="mb-6 text-primary">
         ¿Cómo te podemos ayudar?
       </DDText>
-      <div className="">
-        <DDText size="subHeadline" weight="light" className="">
-          Tenemos la misión de acompañar y apoyar a organizaciones, líderes y
-          equipos.
-        </DDText>
-      </div>
+      <DDText size="subHeadline" weight="light" className="mb-24">
+        Tenemos la misión de acompañar y apoyar a organizaciones, líderes y
+        equipos.
+      </DDText>
+      <div>.</div>
     </div>
   );
 };

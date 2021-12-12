@@ -1,5 +1,5 @@
 import React from "react";
-import { DDText } from "@cnerylozada/dd.front.react.wp.library";
+import { DDButton, DDText } from "@cnerylozada/dd.front.react.wp.library";
 
 const HomeCoverPage = ({}: {}) => {
   return (
@@ -19,7 +19,7 @@ const HomeCoverPage = ({}: {}) => {
         >
           ¿Quieres saber más?
         </DDText>
-        {/* <DDButton onClick={() => console.log("xxx")}>Contáctanos</DDButton> */}
+        <DDButton onClick={() => console.log("xxx")}>Contáctanos</DDButton>
       </div>
       <div className="absolute bottom-10">
         <DDText size="subHeadline" weight="light">

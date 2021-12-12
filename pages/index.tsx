@@ -1,6 +1,12 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { HomeCoverPage, HomeServices } from "../components";
+import {
+  HomeCoverPage,
+  HomeContact,
+  HomeCustomers,
+  HomeServices,
+  HomeStaff,
+} from "../components";
 
 const Home: NextPage = () => {
   return (
@@ -13,6 +19,9 @@ const Home: NextPage = () => {
 
       <HomeCoverPage />
       <HomeServices />
+      <HomeStaff />
+      <HomeCustomers />
+      <HomeContact />
     </div>
   );
 };
