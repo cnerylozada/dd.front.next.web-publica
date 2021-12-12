@@ -1,16 +1,14 @@
 import React from "react";
 import { DDText } from "@cnerylozada/dd.front.react.wp.library";
 
-const HomeStaff = ({}: {}) => {
+const HomeStaff = ({ people, lng }: { people: any; lng: string }) => {
   return (
     <div className="px-7 pt-12 bg-bg2 text-text">
       <DDText size="headline" className="mb-6 text-primary">
-        Somos DynamicDevs
+        {people[`title_${lng}`]}
       </DDText>
       <DDText size="subHeadline" weight="light" className="mb-12">
-        Nos dedicamos al desarrollo de software centrado en habilitar procesos
-        de innovación apoyados en la tecnología. Nos mueve crear soluciones de
-        impacto real.
+        {people[`description_${lng}`]}
       </DDText>
       <div>.</div>
     </div>

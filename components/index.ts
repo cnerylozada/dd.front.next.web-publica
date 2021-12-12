@@ -4,4 +4,13 @@ import HomeStaff from "./home-staff";
 import HomeContact from "./home-contact";
 import HomeCustomers from "./home-customers";
 
-export { HomeCoverPage, HomeContact, HomeCustomers, HomeServices, HomeStaff };
+import Navbar from "./navbar";
+
+export {
+  HomeCoverPage,
+  HomeContact,
+  HomeCustomers,
+  HomeServices,
+  HomeStaff,
+  Navbar,
+};

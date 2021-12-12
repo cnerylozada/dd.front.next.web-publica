@@ -1,5 +1,5 @@
-import type { NextPage } from "next";
 import Head from "next/head";
+import { getHomeSections } from "../services";
 import {
   HomeCoverPage,
   HomeContact,
@@ -8,7 +8,15 @@ import {
   HomeStaff,
 } from "../components";
 
-const Home: NextPage = () => {
+export async function getStaticProps() {
+  const sections = await getHomeSections();
+  return {
+    props: { sections },
+  };
+}
+
+const Home = ({ sections }: { sections: any }) => {
+  const language = "en";
   return (
     <div>
       <Head>
@@ -17,10 +25,10 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <HomeCoverPage />
-      <HomeServices />
-      <HomeStaff />
-      <HomeCustomers />
+      <HomeCoverPage cover={sections.cover} lng={language} />
+      <HomeServices services={sections.services_section} lng={language} />
+      <HomeStaff people={sections.people_section} lng={language} />
+      <HomeCustomers client={sections.client_section} lng={language} />
       <HomeContact />
     </div>
   );
