@@ -5,7 +5,7 @@ const HomeCoverPage = ({}: {}) => {
   return (
     <div
       className="px-5 h-screen flex flex-col justify-center items-center 
-      bg-banner-last-frame bg-center bg-cover text-center text-text"
+      text-center text-text"
     >
       <DDText size="headline" className="mb-11 lg:w-10/12">
         Desarrollo de software: Auténtico entendimiento y gestión de la
