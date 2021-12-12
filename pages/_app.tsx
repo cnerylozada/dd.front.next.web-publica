@@ -6,7 +6,7 @@ import "../styles/globals.css";
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   return (
-    <div className={` ${isDarkMode ? "darkPalette" : ""}`}>
+    <div className={`${isDarkMode ? "darkPalette" : ""}`}>
       <button onClick={() => setIsDarkMode((_) => !_)}>Change Theme</button>
 
       <DDTheme isDarkMode={isDarkMode}>

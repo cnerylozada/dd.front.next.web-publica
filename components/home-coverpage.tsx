@@ -1,11 +1,11 @@
 import React from "react";
-import { DDButton, DDText } from "@cnerylozada/dd.front.react.wp.library";
+import { DDText } from "@cnerylozada/dd.front.react.wp.library";
 
-export const HomeCoverPage = ({}: {}) => {
+const HomeCoverPage = ({}: {}) => {
   return (
-    <main
+    <div
       className="px-5 h-screen flex flex-col justify-center items-center 
-    bg-banner-last-frame bg-center bg-cover text-center bg-bg2 text-text"
+      bg-banner-last-frame bg-center bg-cover text-center text-text"
     >
       <DDText size="headline" className="mb-11 lg:w-10/12">
         Desarrollo de software: Auténtico entendimiento y gestión de la
@@ -19,13 +19,15 @@ export const HomeCoverPage = ({}: {}) => {
         >
           ¿Quieres saber más?
         </DDText>
-        <DDButton onClick={() => console.log("xxx")}>Contáctanos</DDButton>
+        {/* <DDButton onClick={() => console.log("xxx")}>Contáctanos</DDButton> */}
       </div>
       <div className="absolute bottom-10">
         <DDText size="subHeadline" weight="light">
           ver más
         </DDText>
       </div>
-    </main>
+    </div>
   );
 };
+
+export default HomeCoverPage;
