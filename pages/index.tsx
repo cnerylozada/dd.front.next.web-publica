@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { DDText } from "@cnerylozada/dd.front.react.wp.library";
+import { HomeCoverPage } from "../sections";
 
 const Home: NextPage = () => {
   return (
@@ -11,20 +11,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="bg-bg2 text-text">
-        <DDText size="headline" weight="light">
-          Welcome to my dynamic web page !
-        </DDText>
-        <DDText size="sectionHeadline" weight="bold">
-          Abcdefghi
-        </DDText>
-        <DDText size="subHeadline">Abcdefghi</DDText>
-        <DDText size="paragraph" weight="regular">
-          Abcdefghi
-        </DDText>
-        <DDText>Abcdefghi</DDText>
-        <DDText size="small">Abcdefghi</DDText>
-      </main>
+      <HomeCoverPage />
     </div>
   );
 };

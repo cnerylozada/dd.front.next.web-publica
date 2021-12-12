@@ -2,6 +2,10 @@ module.exports = {
   purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      backgroundImage: (theme) => ({
+        "banner-last-frame":
+          "url('https://dynamicdevscommon.blob.core.windows.net/web/banner-last-frame.png')",
+      }),
       colors: {
         primary: "var(--primary)",
         danger: "var(--danger)",
