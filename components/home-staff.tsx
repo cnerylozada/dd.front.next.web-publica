@@ -42,7 +42,15 @@ const HomeStaff = ({ people, lng }: { people: any; lng: string }) => {
         <DDText size="subHeadline" weight="light" className="mb-12">
           {people[`description_${lng}`]}
         </DDText>
-        <DDButton onClick={() => console.log("xxx")} className="block mx-auto">
+        <DDButton
+          onClick={() =>
+            window.open(
+              "https://www.getonbrd.com/companies/dynamic-devs",
+              "blank"
+            )
+          }
+          className="block mx-auto"
+        >
           {people[`bottom_title_${lng}`]}
         </DDButton>
       </div>

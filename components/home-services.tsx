@@ -1,5 +1,7 @@
 import React from "react";
+import Lottie from "react-lottie";
 import { DDText } from "@cnerylozada/dd.front.react.wp.library";
+import { serviceCategories } from "../services";
 
 const HomeServices = ({ services, lng }: { services: any; lng: string }) => {
   return (
@@ -10,7 +12,13 @@ const HomeServices = ({ services, lng }: { services: any; lng: string }) => {
       <DDText size="subHeadline" weight="light" className="mb-24">
         {services[`description_${lng}`]}
       </DDText>
-      <div>.</div>
+      <div>
+        {serviceCategories.map((_) => (
+          <div key={_.id} className="w-36 h-36">
+            <Lottie options={_.animation} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
