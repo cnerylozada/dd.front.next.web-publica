@@ -25,6 +25,17 @@ module.exports = {
         gray2: "var(--gray2)",
         gray3: "var(--gray3)",
       },
+      height: {
+        animation: "345px",
+      },
+      padding: {
+        38: "152px",
+        45: "180px",
+      },
+      width: {
+        122.5: "490px",
+        animation: "345px",
+      },
     },
   },
   variants: {
