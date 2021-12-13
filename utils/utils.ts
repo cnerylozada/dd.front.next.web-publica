@@ -35,3 +35,24 @@ export const getIconData = (id: string) => {
     },
   };
 };
+
+export const getColorText = (color: string): string => {
+  let style: string = "";
+  switch (color) {
+    case "green":
+      style = "text-green";
+      break;
+    case "turquoise":
+      style = "text-turquoise";
+      break;
+    case "blue":
+      style = "text-blue";
+      break;
+    case "purple":
+      style = "text-purple";
+      break;
+    default:
+      break;
+  }
+  return style;
+};

@@ -3,6 +3,7 @@ import Lottie from "react-lottie";
 import { DDCardService, DDText } from "@cnerylozada/dd.front.react.wp.library";
 import { serviceCategories } from "../services";
 import Template from "./template";
+import { getColorText } from "../utils";
 
 const HomeServices = ({ services, lng }: { services: any; lng: string }) => {
   return (
@@ -18,7 +19,7 @@ const HomeServices = ({ services, lng }: { services: any; lng: string }) => {
           <DDText
             size="sectionHeadline"
             weight="bold"
-            className={`mb-12 lg:mb-10 text-purple text-center uppercase`}
+            className="mb-12 lg:mb-10 text-center uppercase"
           >
             {_.title}
           </DDText>
@@ -32,7 +33,7 @@ const HomeServices = ({ services, lng }: { services: any; lng: string }) => {
                 !!((index + 1) % 2) ? "lg:mr-16" : "lg:ml-16"
               } w-36 lg:w-animation h-36 lg:h-animation`}
             >
-              <Lottie options={_.animation} />
+              {/* <Lottie options={_.animation} /> */}
             </div>
             <div>
               {_.services.map((service, index) => (
