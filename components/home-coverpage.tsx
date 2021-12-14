@@ -40,7 +40,7 @@ const HomeCoverPage = ({ cover, lng }: { cover: any; lng: string }) => {
         <DDText
           size="subHeadline"
           weight="light"
-          className="mb-2 lg:mb-0 lg:mr-6 animate-subtitle-opacity"
+          className="mb-4 lg:mb-0 lg:mr-6 animate-subtitle-opacity"
         >
           ¿Quieres saber más?
         </DDText>
