@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import Image from "next/image";
 import { DDButton, DDText } from "@cnerylozada/dd.front.react.wp.library";
@@ -9,10 +8,12 @@ const HomeCoverPage = ({ cover, lng }: { cover: any; lng: string }) => {
       className="relative px-5 h-screen flex flex-col justify-center items-center 
       text-white text-center bg-black"
     >
-      <img
-        src="https://dynamicdevscommon.blob.core.windows.net/web/banner-last-frame.png"
+      <Image
         alt="home-banner"
-        className="absolute top-0 left-0 w-full h-full object-cover"
+        src="https://dynamicdevscommon.blob.core.windows.net/web/banner-last-frame.png"
+        layout="fill"
+        objectFit="cover"
+        quality={100}
       />
       <video
         autoPlay
