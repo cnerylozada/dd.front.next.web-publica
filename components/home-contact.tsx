@@ -1,10 +1,11 @@
 import React from "react";
 import { DDText } from "@cnerylozada/dd.front.react.wp.library";
+import Template from "./template";
 
 const HomeContact = ({}: {}) => {
   return (
-    <div className="px-7 pt-12 bg-primary text-text">
-      <DDText size="headline" className="mb-12 text-text">
+    <Template id="contactSection" className="bg-primary text-text">
+      <DDText size="headline" weight="bold" className="mb-12 text-text">
         Facilitamos decisiones en proyectos tecnológicos
       </DDText>
       <DDText size="subHeadline" weight="light" className="mb-12">
@@ -12,7 +13,7 @@ const HomeContact = ({}: {}) => {
         tu proyecto.
       </DDText>
       <div>.</div>
-    </div>
+    </Template>
   );
 };
 

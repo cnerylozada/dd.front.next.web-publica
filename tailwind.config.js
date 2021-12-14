@@ -18,10 +18,6 @@ module.exports = {
           "100%": { opacity: 0 },
         },
       },
-      backgroundImage: (theme) => ({
-        "banner-last-frame":
-          "url('https://dynamicdevscommon.blob.core.windows.net/web/banner-last-frame.png')",
-      }),
       colors: {
         primary: "var(--primary)",
         danger: "var(--danger)",

@@ -48,7 +48,12 @@ const HomeCoverPage = ({ cover, lng }: { cover: any; lng: string }) => {
           {lng == "es" ? "Contáctanos" : `Let's Talk`}
         </DDButton>
       </div>
-      <div className="absolute bottom-10 z-10">
+      <div
+        className="absolute bottom-10 z-10"
+        onClick={() => {
+          document.getElementById("contactSection")?.scrollIntoView();
+        }}
+      >
         <DDText size="subHeadline" weight="light">
           ver más
         </DDText>

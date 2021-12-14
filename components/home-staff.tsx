@@ -10,7 +10,11 @@ import Template from "./template";
 const HomeStaff = ({ people, lng }: { people: any; lng: string }) => {
   return (
     <Template className="bg-bg2 text-text">
-      <DDText size="headline" className="mb-6 lg:mb-10 text-primary">
+      <DDText
+        size="headline"
+        weight="bold"
+        className="mb-6 lg:mb-10 text-primary"
+      >
         {people[`title_${lng}`]}
       </DDText>
       <DDText size="subHeadline" weight="light" className="mb-12 lg:mb-20">
