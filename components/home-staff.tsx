@@ -6,6 +6,7 @@ import {
 } from "@cnerylozada/dd.front.react.wp.library";
 import { staff } from "../services";
 import Template from "./template";
+import { languages } from "../utils";
 
 const HomeStaff = ({ people, lng }: { people: any; lng: string }) => {
   return (
@@ -18,7 +19,7 @@ const HomeStaff = ({ people, lng }: { people: any; lng: string }) => {
         {people[`title_${lng}`]}
       </DDText>
       <DDText size="subHeadline" weight="light" className="mb-12 lg:mb-20">
-        {lng === "es"
+        {lng === languages.spanish
           ? "Nos dedicamos al desarrollo de software centrado en habilitar procesos de innovación apoyados en la tecnología. Nos mueve crear soluciones de impacto real."
           : "We are dedicated to software development focused on enabling technology-supported innovation processes. We are moved to create solutions with real impact."}
       </DDText>
@@ -40,7 +41,7 @@ const HomeStaff = ({ people, lng }: { people: any; lng: string }) => {
           weight="bold"
           className="mb-6 lg:mb-10 text-primary uppercase"
         >
-          {lng === "es"
+          {lng === languages.spanish
             ? "¿quieres ser parte del equipo?"
             : "Want to be part of our team?"}
         </DDText>

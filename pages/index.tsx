@@ -7,6 +7,7 @@ import {
   HomeServices,
   HomeStaff,
 } from "../components";
+import { languages } from "../utils";
 
 export async function getStaticProps() {
   const sections = await getHomeSections();
@@ -16,7 +17,8 @@ export async function getStaticProps() {
 }
 
 const Home = ({ sections }: { sections: any }) => {
-  const language = "en";
+  const language = languages.english;
+
   return (
     <div>
       <Head>

@@ -42,3 +42,5 @@ export const getTextColor = {
   purple: "text-purple",
   turquoise: "text-turquoise",
 };
+
+export const languages = { spanish: "es", english: "en" };

@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { DDButton, DDText } from "@cnerylozada/dd.front.react.wp.library";
+import { languages } from "../utils";
 
 const HomeCoverPage = ({ cover, lng }: { cover: any; lng: string }) => {
   return (
@@ -36,26 +37,27 @@ const HomeCoverPage = ({ cover, lng }: { cover: any; lng: string }) => {
       >
         {cover[`title_${lng}`]}
       </DDText>
-      <div className="lg:flex lg:items-center z-10">
+      <div className="lg:flex lg:items-center animate-subtitle-opacity z-10">
         <DDText
           size="subHeadline"
           weight="light"
-          className="mb-4 lg:mb-0 lg:mr-6 animate-subtitle-opacity"
+          className="mb-4 lg:mb-0 lg:mr-6 "
         >
-          ¿Quieres saber más?
+          {lng == languages.spanish
+            ? "¿Quieres saber más?"
+            : "How can we help you?"}
         </DDText>
-        <DDButton onClick={() => console.log("xxx")}>
-          {lng == "es" ? "Contáctanos" : `Let's Talk`}
+        <DDButton
+          onClick={() => {
+            document.getElementById("contactSection")?.scrollIntoView();
+          }}
+        >
+          {lng == languages.spanish ? "Contáctanos" : `Let's Talk`}
         </DDButton>
       </div>
-      <div
-        className="absolute bottom-10 z-10"
-        onClick={() => {
-          document.getElementById("contactSection")?.scrollIntoView();
-        }}
-      >
+      <div className="absolute bottom-10 z-10">
         <DDText size="subHeadline" weight="light">
-          ver más
+          {lng == languages.spanish ? "ver más" : "view more"}
         </DDText>
       </div>
     </div>

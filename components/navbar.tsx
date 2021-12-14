@@ -1,41 +1,37 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { DDText } from "@cnerylozada/dd.front.react.wp.library";
+import { languages } from "../utils";
 
 const navLinks = [
   {
     id: 1,
-    label: "inicio",
+    label_es: "inicio",
+    label_en: "home",
   },
   {
     id: 2,
-    label: "servicios",
-  },
-  {
-    id: 3,
-    label: "blog",
-  },
-  {
-    id: 4,
-    label: "carreras",
-  },
-  {
-    id: 5,
-    label: "contacto",
+    label_es: "servicios",
+    label_en: "services",
   },
 ];
 
-const languages = [
-  { id: 1, label: "sp" },
-  { id: 2, label: "en" },
+const navLanguages = [
+  { id: 1, label: "sp", value: languages.spanish },
+  { id: 2, label: "en", value: languages.english },
 ];
 
 const Navbar = ({ setIsDarkMode }: { setIsDarkMode: any }) => {
   const [isSidebarShown, setIsSidebarShown] = useState(false);
+  const [currentLng, setCurrentLng] = useState<any>(languages.spanish);
+
+  useEffect(() => {
+    setCurrentLng(localStorage.getItem("dd-lng"));
+  }, []);
 
   return (
     <div className="z-20 absolute top-0 left-0 w-full text-text">
       <div className="flex justify-between bg-bg2 py-3 px-6">
-        <div>Logo dynamic</div>
+        <div>▶</div>
         <div onClick={() => setIsSidebarShown((_) => !_)} className="lg:hidden">
           Ξ
         </div>
@@ -59,20 +55,31 @@ const Navbar = ({ setIsDarkMode }: { setIsDarkMode: any }) => {
                 weight="bold"
                 className="uppercase"
               >
-                {_.label}
+                {_[`label_${currentLng}`]}
               </DDText>
             ))}
           </div>
           <div className="flex space-x-10" style={{ marginBottom: "90px" }}>
-            {languages.map((_, index) => (
-              <DDText
+            {navLanguages.map((_, index) => (
+              <div
                 key={index}
-                size="sectionHeadline"
-                weight="bold"
-                className="uppercase"
+                onClick={() => {
+                  localStorage.setItem("dd-lng", _.value);
+                  setCurrentLng(_.value);
+                }}
               >
-                {_.label}
-              </DDText>
+                <DDText
+                  size="sectionHeadline"
+                  weight="bold"
+                  className={`uppercase ${
+                    currentLng === _.value
+                      ? "border-b-2 border-b-text"
+                      : "border-0"
+                  }`}
+                >
+                  {_.label}
+                </DDText>
+              </div>
             ))}
           </div>
           <div onClick={() => setIsSidebarShown(false)} className="mx-auto">
