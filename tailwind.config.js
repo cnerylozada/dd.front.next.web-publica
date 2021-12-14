@@ -2,6 +2,22 @@ module.exports = {
   purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      animation: {
+        "title-opacity": "custom-opacity 3.5s ease-in",
+        "subtitle-opacity": "custom-opacity 1.5s ease-in backwards 2s",
+        "btn-banner-opacity": "custom-opacity 1.5s ease-in backwards 3s",
+        "video-opacity": "video-opacity 3.25s linear forwards",
+      },
+      keyframes: {
+        "custom-opacity": {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 1 },
+        },
+        "video-opacity": {
+          "0%, 99%": { opacity: 1 },
+          "100%": { opacity: 0 },
+        },
+      },
       backgroundImage: (theme) => ({
         "banner-last-frame":
           "url('https://dynamicdevscommon.blob.core.windows.net/web/banner-last-frame.png')",
