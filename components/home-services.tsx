@@ -36,7 +36,7 @@ const HomeServices = ({ services, lng }: { services: any; lng: string }) => {
                 !!((index + 1) % 2) ? "lg:mr-16" : "lg:ml-16"
               } w-36 lg:w-animation h-36 lg:h-animation`}
             >
-              <Lottie options={_.animation} />
+              {/* <Lottie options={_.animation} /> */}
             </div>
             <div>
               {_.services.map((service, index) => (
