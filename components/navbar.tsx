@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { DDText } from "@cnerylozada/dd.front.react.wp.library";
+import { useStore, setLanguage } from "../store";
 import { languages } from "../utils";
 
 const navLinks = [
@@ -21,17 +22,19 @@ const navLanguages = [
 ];
 
 const Navbar = ({ setIsDarkMode }: { setIsDarkMode: any }) => {
+  const [store, dispatch] = useStore();
   const [isSidebarShown, setIsSidebarShown] = useState(false);
-  const [currentLng, setCurrentLng] = useState<any>(languages.spanish);
-
-  useEffect(() => {
-    setCurrentLng(localStorage.getItem("dd-lng"));
-  }, []);
+  const [currentLng, setCurrentLng] = useState<any>(store.ddLanguage);
 
   return (
-    <div className="z-20 absolute top-0 left-0 w-full text-text">
+    <div className="z-20 fixed top-0 left-0 w-full text-text">
       <div className="flex justify-between bg-bg2 py-3 px-6">
         <div>▶</div>
+        <div>
+          <button onClick={() => setIsDarkMode((_: boolean) => !_)}>
+            change theme
+          </button>
+        </div>
         <div onClick={() => setIsSidebarShown((_) => !_)} className="lg:hidden">
           Ξ
         </div>
@@ -43,7 +46,7 @@ const Navbar = ({ setIsDarkMode }: { setIsDarkMode: any }) => {
         >
           <button
             className="block mb-10"
-            onClick={() => setIsDarkMode((_) => !_)}
+            onClick={() => setIsDarkMode((_: boolean) => !_)}
           >
             change theme
           </button>
@@ -66,6 +69,7 @@ const Navbar = ({ setIsDarkMode }: { setIsDarkMode: any }) => {
                 onClick={() => {
                   localStorage.setItem("dd-lng", _.value);
                   setCurrentLng(_.value);
+                  dispatch(setLanguage(_.value));
                 }}
               >
                 <DDText
