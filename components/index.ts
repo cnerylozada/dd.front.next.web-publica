@@ -4,6 +4,8 @@ import HomeStaff from "./home-staff";
 import HomeContact from "./home-contact";
 import HomeCustomers from "./home-customers";
 
+import ServiceCoverPage from "./services-coverpage";
+
 import Navbar from "./navbar";
 
 export {
@@ -13,4 +15,5 @@ export {
   HomeServices,
   HomeStaff,
   Navbar,
+  ServiceCoverPage,
 };

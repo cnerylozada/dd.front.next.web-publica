@@ -1,10 +1,11 @@
 import { languages } from "../utils";
 
-export const SET_LANGUAGE = "SET_LANGUAGE";
-export const SET_THEME = "SET_THEME";
+const SET_LANGUAGE = "SET_LANGUAGE";
+const SET_THEME = "SET_THEME";
 
 export const initialState = {
   ddLanguage: languages.spanish,
+  ddIsDarkMode: false,
 };
 
 export const setLanguage = (payload: any) => ({
@@ -12,7 +13,7 @@ export const setLanguage = (payload: any) => ({
   payload,
 });
 
-export const seTheme = (payload: any) => ({
+export const setTheme = (payload: any) => ({
   type: SET_THEME,
   payload,
 });
@@ -23,6 +24,11 @@ export const reducer = (state: any, action: any) => {
       return {
         ...state,
         ddLanguage: action.payload,
+      };
+    case SET_THEME:
+      return {
+        ...state,
+        ddIsDarkMode: action.payload,
       };
 
     default:

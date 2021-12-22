@@ -44,3 +44,23 @@ export const getTextColor = {
 };
 
 export const languages = { spanish: "es", english: "en" };
+
+export const navLinks = [
+  {
+    id: 1,
+    label_es: "inicio",
+    label_en: "home",
+    path: "",
+  },
+  {
+    id: 2,
+    label_es: "servicios",
+    label_en: "services",
+    path: "services",
+  },
+];
+
+export const navLanguages = [
+  { id: 1, label: "sp", value: languages.spanish },
+  { id: 2, label: "en", value: languages.english },
+];
