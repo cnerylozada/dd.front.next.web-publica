@@ -1,7 +1,6 @@
 import axios from "axios";
+import { url } from "./config";
 import { getIconData } from "../utils";
-
-const url = "https://strapi.dynamicdevs.io";
 
 export const getHomeSections = () => {
   return axios.get(`${url}/home`).then(({ data }) => data);
