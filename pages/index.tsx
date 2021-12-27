@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { getHomeSections } from "../services";
 import { useStore } from "../store";
 import {
@@ -28,6 +29,10 @@ const Home = ({ sections }: { sections: any }) => {
       <HomeStaff people={sections.people_section} lng={store.ddLanguage} />
       <HomeCustomers client={sections.client_section} lng={store.ddLanguage} />
       <HomeContact />
+      {/* <div className="text-green"></div>
+      <div className="text-turquoise"></div>
+      <div className="text-blue"></div>
+      <div className="text-purple"></div> */}
     </div>
   );
 };

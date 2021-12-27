@@ -21,7 +21,9 @@ const HomeServices = ({ services, lng }: { services: any; lng: string }) => {
             size="sectionHeadline"
             weight="bold"
             caps
-            className="mb-12 lg:mb-10 text-center"
+            className={`mb-12 lg:mb-10 text-text text-center ${
+              getTextColor[_.color]
+            }`}
           >
             {_.title}
           </DDText>

@@ -39,6 +39,11 @@ module.exports = {
       },
       height: {
         animation: "345px",
+        100: "400px",
+        112: "448px",
+      },
+      margin: {
+        22: "88px",
       },
       padding: {
         38: "152px",
