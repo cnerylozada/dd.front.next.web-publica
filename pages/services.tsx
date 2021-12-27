@@ -13,7 +13,7 @@ export async function getStaticProps() {
 const Services = ({ sections }: { sections: any }) => {
   const [store] = useStore();
   return (
-    <div>
+    <>
       <ServiceCoverPage lng={store.ddLanguage} />
       {sections.map((_: any, index: number) => (
         <ServicesTemplate
@@ -25,7 +25,7 @@ const Services = ({ sections }: { sections: any }) => {
           lng={store.ddLanguage}
         />
       ))}
-    </div>
+    </>
   );
 };
 

@@ -38,6 +38,7 @@ module.exports = {
         gray3: "var(--gray3)",
       },
       height: {
+        87: "332px",
         animation: "345px",
         100: "400px",
         112: "448px",

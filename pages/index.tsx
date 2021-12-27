@@ -20,7 +20,7 @@ const Home = ({ sections }: { sections: any }) => {
   const [store] = useStore();
 
   return (
-    <div>
+    <>
       <HomeCoverPage cover={sections.cover} lng={store.ddLanguage} />
       <HomeServices
         services={sections.services_section}
@@ -29,11 +29,11 @@ const Home = ({ sections }: { sections: any }) => {
       <HomeStaff people={sections.people_section} lng={store.ddLanguage} />
       <HomeCustomers client={sections.client_section} lng={store.ddLanguage} />
       <HomeContact />
-      {/* <div className="text-green"></div>
-      <div className="text-turquoise"></div>
+      <div className="text-green h-100 lg:h-112 mt-22 lg:mt-32 mb-24 lg:mb-40 space-y-20 lg:w-8/12"></div>
+      <div className="text-turquoise ml-auto"></div>
       <div className="text-blue"></div>
-      <div className="text-purple"></div> */}
-    </div>
+      <div className="text-purple"></div>
+    </>
   );
 };
 

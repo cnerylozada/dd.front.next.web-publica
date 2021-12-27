@@ -22,6 +22,7 @@ const ServicesTemplate = ({
   return (
     <>
       <div
+        id={name}
         className="relative px-7 lg:px-45 h-100 lg:h-112 
       flex flex-col justify-center text-white text-center"
       >
