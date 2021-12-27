@@ -64,3 +64,10 @@ export const navLanguages = [
   { id: 1, label: "sp", value: languages.spanish },
   { id: 2, label: "en", value: languages.english },
 ];
+
+export const socialNetworks = [
+  { link: "https://web.facebook.com/dynamicdevs" },
+  { link: "https://www.linkedin.com/company/dynamic-devs/" },
+  { link: "https://twitter.com/devsinfo?lang=es" },
+  { link: "https://www.instagram.com/dynamicdevs/" },
+];

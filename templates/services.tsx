@@ -1,21 +1,26 @@
 import Image from "next/image";
 import React from "react";
-import { DDText } from "@cnerylozada/dd.front.react.wp.library";
+import {
+  DDText,
+  DDServiceDetail,
+} from "@cnerylozada/dd.front.react.wp.library";
 
 const ServicesTemplate = ({
   name,
   description,
   services,
+  color,
   lng,
 }: {
   name: string;
   description: string;
   services: any;
+  color: string;
   lng: string;
 }) => {
   return (
     <>
-      <div className="relative py-16 px-7 flex flex-col text-white text-center ">
+      <div className="relative px-7 h-96 flex flex-col justify-center text-white text-center">
         <Image
           alt="service-banner"
           src="https://dynamicdevscommon.blob.core.windows.net/web/banner-last-frame.png"
@@ -23,24 +28,26 @@ const ServicesTemplate = ({
           objectFit="cover"
           quality={100}
         />
-        <DDText size="headline" weight="bold" className="z-10 mb-6">
+        <DDText size="headline" weight="bold" className="z-10 mb-6 lg:mb-10">
           {name}
         </DDText>
         <DDText size="subHeadline" weight="light" className="z-10">
           {description}
         </DDText>
       </div>
-      <div className="bg-bg2 text-text">
-        {services.map((_: any, index: number) => (
-          <div key={index}>
-            <DDText size="sectionHeadline" weight="bold">
-              {_.name}
-            </DDText>
-            <DDText size="subHeadline" weight="light">
-              {_[`description_${lng}`]}
-            </DDText>
-          </div>
-        ))}
+      <div className="px-7 flex justify-center bg-bg2">
+        <div className="text-text">
+          {services.map((_: any, index: number) => (
+            <DDServiceDetail
+              key={index}
+              title={_.name}
+              description={_[`description_${lng}`]}
+              color={color}
+              align={(index + 1) % 2 ? "left" : "right"}
+              onClick={() => console.log("xxx")}
+            />
+          ))}
+        </div>
       </div>
     </>
   );

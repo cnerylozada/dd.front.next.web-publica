@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { DDText } from "@cnerylozada/dd.front.react.wp.library";
+import { DDText, DDToggle } from "@cnerylozada/dd.front.react.wp.library";
 import { useStore, setLanguage, setTheme } from "../store";
 import { navLinks, navLanguages } from "../utils";
 
@@ -10,18 +10,16 @@ const Sidebar = ({ setIsSidebarShown }: { setIsSidebarShown: any }) => {
   return (
     <div
       className="z-20 fixed top-0 left-0 w-full h-full
-  px-9 flex flex-col justify-center bg-bg1"
+      px-9 flex flex-col justify-center bg-bg1"
     >
-      <button
-        className="block mb-10"
+      <DDToggle
+        // className="block mb-10"
         onClick={() => {
           const newTheme: boolean = !store.ddIsDarkMode;
           localStorage.setItem("dd-theme", newTheme ? "dark" : "light");
           dispatch(setTheme(newTheme));
         }}
-      >
-        change theme
-      </button>
+      />
       <div className="space-y-10 mb-10">
         {navLinks.map((_, index) => (
           <Link key={index} href={`/${_.path}`}>

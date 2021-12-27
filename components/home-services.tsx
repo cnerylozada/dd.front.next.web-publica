@@ -21,9 +21,7 @@ const HomeServices = ({ services, lng }: { services: any; lng: string }) => {
             size="sectionHeadline"
             weight="bold"
             caps
-            className={`mb-12 lg:mb-10 text-text text-center ${
-              getTextColor[_.color]
-            }`}
+            className="mb-12 lg:mb-10 text-center"
           >
             {_.title}
           </DDText>
@@ -37,7 +35,7 @@ const HomeServices = ({ services, lng }: { services: any; lng: string }) => {
                 !!((index + 1) % 2) ? "lg:mr-16" : "lg:ml-16"
               } w-36 lg:w-animation h-36 lg:h-animation`}
             >
-              {/* <Lottie options={_.animation} /> */}
+              <Lottie options={_.animation} />
             </div>
             <div>
               {_.services.map((service, index) => (

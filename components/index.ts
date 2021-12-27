@@ -7,8 +7,10 @@ import HomeCustomers from "./home-customers";
 import ServiceCoverPage from "./services-coverpage";
 
 import Navbar from "./navbar";
+import Footer from "./footer";
 
 export {
+  Footer,
   HomeCoverPage,
   HomeContact,
   HomeCustomers,
