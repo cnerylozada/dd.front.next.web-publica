@@ -26,11 +26,7 @@ const Sidebar = ({ setIsSidebarShown }: { setIsSidebarShown: any }) => {
         {navLinks.map((_, index) => (
           <Link key={index} href={`/${_.path}`}>
             <a className="block" onClick={() => setIsSidebarShown(false)}>
-              <DDText
-                size="sectionHeadline"
-                weight="bold"
-                className="uppercase"
-              >
+              <DDText size="sectionHeadline" weight="bold" caps>
                 {_[`label_${store.ddLanguage}`]}
               </DDText>
             </a>

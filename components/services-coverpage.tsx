@@ -8,7 +8,7 @@ const ServiceCoverPage = ({ lng }: { lng: string }) => {
       className="relative px-7 h-screen flex flex-col justify-center items-center 
       bg-bg2 text-text text-center"
     >
-      <DDText size="headline" className="uppercase mb-14">
+      <DDText size="headline" caps className="mb-14">
         {coverPage[`title_${lng}`]}
       </DDText>
       <DDText className="">{coverPage[`subTitle_${lng}`]}</DDText>

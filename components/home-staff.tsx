@@ -39,7 +39,8 @@ const HomeStaff = ({ people, lng }: { people: any; lng: string }) => {
         <DDText
           size="sectionHeadline"
           weight="bold"
-          className="mb-6 lg:mb-10 text-primary uppercase"
+          className="mb-6 lg:mb-10 text-primary"
+          caps
         >
           {lng === languages.spanish
             ? "¿quieres ser parte del equipo?"
