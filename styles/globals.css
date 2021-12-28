@@ -4,6 +4,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    transition: 0.5s ease;
+  }
+
+  .container:hover .overlay {
+    height: 100%;
+  }
+}
+
 @import "../assets/css/palette.css";
 
 :root {

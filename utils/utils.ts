@@ -31,7 +31,7 @@ export const getIconData = (id: string) => {
     animationData: icon,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
-      className: className,
+      className: `${className} text-text`,
     },
   };
 };
@@ -41,6 +41,13 @@ export const getTextColor = {
   blue: "text-blue",
   purple: "text-purple",
   turquoise: "text-turquoise",
+};
+
+export const getBgColor = {
+  green: "bg-green",
+  blue: "bg-blue",
+  purple: "bg-purple",
+  turquoise: "bg-turquoise",
 };
 
 export const languages = { spanish: "es", english: "en" };
