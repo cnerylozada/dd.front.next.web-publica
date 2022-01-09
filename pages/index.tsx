@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { getHomeSections } from "../services";
 import { useStore } from "../store";
 import {
