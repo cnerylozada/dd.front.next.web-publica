@@ -1,21 +1,19 @@
 import React from "react";
 import { useRouter } from "next/router";
 import Lottie from "react-lottie";
-import { DDCardService, DDText } from "@cnerylozada/dd.front.react.wp.library";
+import {
+  DDCardService,
+  DDIcon,
+  DDText,
+} from "@cnerylozada/dd.front.react.wp.library";
 import { serviceCategories } from "../services";
 import Template from "./template";
 import { getTextColor } from "../utils";
-import { QurableButton } from "./QurableButton";
 
 const HomeServices = ({ services, lng }: { services: any; lng: string }) => {
   const router = useRouter();
   return (
     <Template className="bg-bg1 text-text">
-      <QurableButton onClick={() => console.log("xxx")}>Buy now</QurableButton>
-      <QurableButton disabled onClick={() => console.log("xxx")}>
-        Listing
-      </QurableButton>
-
       <DDText size="headline" weight="bold" className="mb-6 text-primary">
         {services[`title_${lng}`]}
       </DDText>
@@ -25,16 +23,24 @@ const HomeServices = ({ services, lng }: { services: any; lng: string }) => {
 
       {serviceCategories.map((_, index) => (
         <div key={_.id} className="mb-28 lg:mb-20 last:mb-0">
-          <DDText
-            size="sectionHeadline"
-            weight="bold"
-            caps
-            className={`mb-12 lg:mb-10 text-text text-center ${
+          <div
+            className={`mb-12 lg:mb-10 
+            flex items-center justify-between lg:justify-center ${
               getTextColor[_.color]
             }`}
           >
-            {_.title}
-          </DDText>
+            <DDIcon name="bullet-right" size="sm" />
+            <DDText
+              size="sectionHeadline"
+              weight="bold"
+              caps
+              className="text-center lg:mx-5"
+            >
+              {_.title}
+            </DDText>
+            <DDIcon name="bullet-left" size="sm" />
+          </div>
+
           <div
             className={`lg:flex ${
               !!((index + 1) % 2) ? "flex-row" : "flex-row-reverse"

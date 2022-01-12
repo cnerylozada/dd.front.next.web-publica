@@ -1,5 +1,5 @@
 import React from "react";
-import { DDText } from "@cnerylozada/dd.front.react.wp.library";
+import { DDSvg, DDText } from "@cnerylozada/dd.front.react.wp.library";
 import { socialNetworks } from "../utils";
 
 const Footer = () => {
@@ -15,7 +15,7 @@ const Footer = () => {
         <div className="mb-4 mx-auto lg:m-0 flex space-x-7 lg:space-x-5">
           {socialNetworks.map((_, index) => (
             <div key={index} onClick={() => window.open(_.link, "_blank")}>
-              social
+              <DDSvg name={_.name} type="logo" className="cursor-pointer" />
             </div>
           ))}
         </div>

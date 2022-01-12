@@ -73,8 +73,8 @@ export const navLanguages = [
 ];
 
 export const socialNetworks = [
-  { link: "https://web.facebook.com/dynamicdevs" },
-  { link: "https://www.linkedin.com/company/dynamic-devs/" },
-  { link: "https://twitter.com/devsinfo?lang=es" },
-  { link: "https://www.instagram.com/dynamicdevs/" },
+  { name: "fb", link: "https://web.facebook.com/dynamicdevs" },
+  { name: "in", link: "https://www.linkedin.com/company/dynamic-devs/" },
+  { name: "twitter", link: "https://twitter.com/devsinfo?lang=es" },
+  { name: "ig", link: "https://www.instagram.com/dynamicdevs/" },
 ];

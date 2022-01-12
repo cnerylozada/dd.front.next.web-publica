@@ -1,5 +1,5 @@
 import React from "react";
-import { DDText } from "@cnerylozada/dd.front.react.wp.library";
+import { DDIcon, DDText } from "@cnerylozada/dd.front.react.wp.library";
 import { coverPage, serviceCategories } from "../services";
 import { getBgColor, getTextColor } from "../utils";
 
@@ -27,10 +27,15 @@ const ServiceCoverPage = ({ lng }: { lng: string }) => {
             className={`relative container lg:w-50 flex flex-col items-center
             ${getTextColor[_.color]} hover:text-text`}
             onClick={() => {
-              document.getElementById(_.title)?.scrollIntoView();
+              document
+                .getElementById(_.title)
+                ?.scrollIntoView({ behavior: "smooth" });
             }}
           >
-            <div className="z-10 w-24 lg:w-48">ICONO</div>
+            <div className="z-10 w-24 lg:w-48">
+              <DDIcon name={_.slug} size="xl" className="lg:hidden" />
+              <DDIcon name={_.slug} size="2xl" className="hidden lg:block" />
+            </div>
             <DDText className="z-10">{_.title}</DDText>
             <div className={`overlay ${getBgColor[_.color]}`}></div>
           </div>

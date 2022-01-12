@@ -43,13 +43,6 @@ module.exports = {
         gray1: "var(--gray1)",
         gray2: "var(--gray2)",
         gray3: "var(--gray3)",
-
-        "qu-blueishgrey": "#72808E",
-        "qu-gray-2": "#ccc",
-      },
-      fontSize: {
-        "qu-base-m": "16px",
-        "qu-base-d": "16px",
       },
       height: {
         87: "332px",

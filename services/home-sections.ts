@@ -109,7 +109,7 @@ export const serviceCategories = [
   },
   {
     id: 3,
-    title: "Make it live",
+    title: "Make It Live",
     color: "blue",
     animation: getIconData("3"),
     slug: "make-it-live",
