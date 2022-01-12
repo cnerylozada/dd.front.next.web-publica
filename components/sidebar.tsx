@@ -13,7 +13,8 @@ const Sidebar = ({ setIsSidebarShown }: { setIsSidebarShown: any }) => {
       px-9 flex flex-col justify-center bg-bg1"
     >
       <DDToggle
-        // className="block mb-10"
+        className="block mb-10"
+        checked={store.ddIsDarkMode}
         onClick={() => {
           const newTheme: boolean = !store.ddIsDarkMode;
           localStorage.setItem("dd-theme", newTheme ? "dark" : "light");

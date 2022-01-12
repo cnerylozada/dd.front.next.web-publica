@@ -39,6 +39,7 @@ export const serviceCategories = [
     title: "Accelerator Approach",
     color: "green",
     animation: getIconData("1"),
+    slug: "accelerator-approach",
     services: [
       {
         id: 1,
@@ -76,6 +77,7 @@ export const serviceCategories = [
     title: "Build & Integrate",
     color: "turquoise",
     animation: getIconData("2"),
+    slug: "build-and-integrate",
     services: [
       {
         id: 1,
@@ -110,6 +112,7 @@ export const serviceCategories = [
     title: "Make it live",
     color: "blue",
     animation: getIconData("3"),
+    slug: "make-it-live",
     services: [
       {
         id: 1,
@@ -137,6 +140,7 @@ export const serviceCategories = [
     title: "Dynamic Culture",
     color: "purple",
     animation: getIconData("4"),
+    slug: "dynamic-culture",
     services: [
       {
         id: 1,

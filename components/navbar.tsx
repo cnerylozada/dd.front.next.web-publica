@@ -6,8 +6,8 @@ import {
   DDToggle,
 } from "@cnerylozada/dd.front.react.wp.library";
 import { useStore, setTheme } from "../store";
-import { navLinks } from "../utils";
 import Sidebar from "./sidebar";
+import { navLinks } from "../utils";
 
 const Navbar = () => {
   const [store, dispatch] = useStore();
@@ -19,6 +19,7 @@ const Navbar = () => {
         <DDLogo />
         <div className="hidden lg:flex space-x-10 text-text">
           <DDToggle
+            checked={store.ddIsDarkMode}
             onClick={() => {
               const newTheme: boolean = !store.ddIsDarkMode;
               localStorage.setItem("dd-theme", newTheme ? "dark" : "light");

@@ -1,11 +1,13 @@
 import React from "react";
-import Lottie from "react-lottie";
+import { useRouter } from "next/router";
+// import Lottie from "react-lottie";
 import { DDCardService, DDText } from "@cnerylozada/dd.front.react.wp.library";
 import { serviceCategories } from "../services";
 import Template from "./template";
 import { getTextColor } from "../utils";
 
 const HomeServices = ({ services, lng }: { services: any; lng: string }) => {
+  const router = useRouter();
   return (
     <Template className="bg-bg1 text-text">
       <DDText size="headline" weight="bold" className="mb-6 text-primary">
@@ -37,7 +39,7 @@ const HomeServices = ({ services, lng }: { services: any; lng: string }) => {
                 !!((index + 1) % 2) ? "lg:mr-16" : "lg:ml-16"
               } w-36 lg:w-animation h-36 lg:h-animation`}
             >
-              <Lottie options={_.animation} />
+              {/* <Lottie options={_.animation} /> */}
             </div>
             <div>
               {_.services.map((service, index) => (
@@ -47,6 +49,9 @@ const HomeServices = ({ services, lng }: { services: any; lng: string }) => {
                   description={service[`description_${lng}`]}
                   color={_.color}
                   className="mb-7 lg:mb-5 last:mb-0 lg:w-122.5"
+                  onClick={() =>
+                    router.push(`/services/${_.slug}/${service.slug}`)
+                  }
                 />
               ))}
             </div>
