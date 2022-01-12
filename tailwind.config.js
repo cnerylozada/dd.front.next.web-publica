@@ -12,6 +12,9 @@ module.exports = {
         "btn-banner-opacity": "custom-opacity 1.5s ease-in backwards 3s",
         "video-opacity": "video-opacity 3.25s linear forwards",
       },
+      backgroundImage: {
+        "qurable-pattern-small": "url('/img/bg-texture-2-small.png')",
+      },
       keyframes: {
         "custom-opacity": {
           "0%": { opacity: 0 },
@@ -40,6 +43,13 @@ module.exports = {
         gray1: "var(--gray1)",
         gray2: "var(--gray2)",
         gray3: "var(--gray3)",
+
+        "qu-blueishgrey": "#72808E",
+        "qu-gray-2": "#ccc",
+      },
+      fontSize: {
+        "qu-base-m": "16px",
+        "qu-base-d": "16px",
       },
       height: {
         87: "332px",

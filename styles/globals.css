@@ -5,6 +5,27 @@
 @tailwind utilities;
 
 @layer components {
+  .text-qu-base {
+    @apply text-qu-base-m lg:text-qu-base-d;
+  }
+
+  .btn-disabled {
+    @apply cursor-not-allowed bg-gray-300 rounded-full;
+  }
+  .btn-type-gradient {
+    @apply font-bold text-white rounded-full
+        bg-qurable-pattern-small bg-cover bg-left bg-no-repeat;
+  }
+  .btn-gradient-size-normal {
+    @apply py-3 px-5 lg:py-4 lg:px-7 text-qu-base;
+  }
+  .btn-qu-gradient-normal {
+    @apply btn-type-gradient btn-gradient-size-normal cursor-pointer;
+  }
+  .btn-qu-gradient-normal-disabled {
+    @apply btn-gradient-size-normal btn-disabled font-bold text-white;
+  }
+
   .overlay {
     position: absolute;
     bottom: 0;

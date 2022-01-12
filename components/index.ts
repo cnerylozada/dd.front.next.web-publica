@@ -9,6 +9,8 @@ import ServiceCoverPage from "./services-coverpage";
 import Navbar from "./navbar";
 import Footer from "./footer";
 
+export * from "./QurableButton";
+
 export {
   Footer,
   HomeCoverPage,
