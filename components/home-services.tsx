@@ -1,6 +1,6 @@
 import React from "react";
 import { useRouter } from "next/router";
-// import Lottie from "react-lottie";
+import Lottie from "react-lottie";
 import { DDCardService, DDText } from "@cnerylozada/dd.front.react.wp.library";
 import { serviceCategories } from "../services";
 import Template from "./template";
@@ -45,7 +45,7 @@ const HomeServices = ({ services, lng }: { services: any; lng: string }) => {
                 !!((index + 1) % 2) ? "lg:mr-16" : "lg:ml-16"
               } w-36 lg:w-animation h-36 lg:h-animation`}
             >
-              {/* <Lottie options={_.animation} /> */}
+              <Lottie options={_.animation} />
             </div>
             <div>
               {_.services.map((service, index) => (
