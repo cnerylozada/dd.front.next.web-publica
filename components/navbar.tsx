@@ -7,7 +7,7 @@ import {
 } from "@cnerylozada/dd.front.react.wp.library";
 import { useStore, setTheme } from "../store";
 import Sidebar from "./sidebar";
-import { navLinks } from "../utils";
+import { navLinks } from "@/utils";
 
 const Navbar = () => {
   const [store, dispatch] = useStore();

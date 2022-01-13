@@ -6,9 +6,9 @@ import {
   DDIcon,
   DDText,
 } from "@cnerylozada/dd.front.react.wp.library";
-import { serviceCategories } from "../services";
+import { serviceCategories } from "@/services";
 import Template from "./template";
-import { getTextColor } from "../utils";
+import { getTextColor } from "@/utils";
 
 const HomeServices = ({ services, lng }: { services: any; lng: string }) => {
   const router = useRouter();

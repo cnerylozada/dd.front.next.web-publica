@@ -1,3 +1,1 @@
-import ServicesTemplate from "./services";
-
-export { ServicesTemplate };
+export * from "./services";

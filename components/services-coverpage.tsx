@@ -1,7 +1,7 @@
 import React from "react";
 import { DDIcon, DDText } from "@cnerylozada/dd.front.react.wp.library";
-import { coverPage, serviceCategories } from "../services";
-import { getBgColor, getTextColor } from "../utils";
+import { coverPage, serviceCategories } from "@/services";
+import { getBgColor, getTextColor } from "@/utils";
 
 const ServiceCoverPage = ({ lng }: { lng: string }) => {
   return (

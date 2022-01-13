@@ -6,7 +6,7 @@ import {
   HomeCustomers,
   HomeServices,
   HomeStaff,
-} from "../components";
+} from "@/components";
 
 export async function getStaticProps() {
   const sections = await getHomeSections();
@@ -17,7 +17,6 @@ export async function getStaticProps() {
 
 const Home = ({ sections }: { sections: any }) => {
   const [store] = useStore();
-
   return (
     <>
       <HomeCoverPage cover={sections.cover} lng={store.ddLanguage} />

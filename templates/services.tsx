@@ -4,9 +4,9 @@ import {
   DDText,
   DDServiceDetail,
 } from "@cnerylozada/dd.front.react.wp.library";
-import { getTextColor } from "../utils";
+import { getTextColor } from "@/utils";
 
-const ServicesTemplate = ({
+export const ServicesTemplate = ({
   name,
   description,
   services,
@@ -62,5 +62,3 @@ const ServicesTemplate = ({
     </>
   );
 };
-
-export default ServicesTemplate;

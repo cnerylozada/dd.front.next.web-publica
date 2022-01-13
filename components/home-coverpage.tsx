@@ -1,7 +1,11 @@
 import React from "react";
 import Image from "next/image";
-import { DDButton, DDText } from "@cnerylozada/dd.front.react.wp.library";
-import { languages } from "../utils";
+import {
+  DDButton,
+  DDText,
+  DDIcon,
+} from "@cnerylozada/dd.front.react.wp.library";
+import { languages } from "@/utils";
 
 const HomeCoverPage = ({ cover, lng }: { cover: any; lng: string }) => {
   return (
@@ -55,10 +59,15 @@ const HomeCoverPage = ({ cover, lng }: { cover: any; lng: string }) => {
           {lng == languages.spanish ? "Contáctanos" : `Let's Talk`}
         </DDButton>
       </div>
-      <div className="absolute bottom-10 z-10">
-        <DDText size="subHeadline" weight="light">
+      <div className="absolute bottom-0 z-10">
+        <DDText
+          size="subHeadline"
+          weight="light"
+          className="absolute top-0 w-full text-center"
+        >
           {lng == languages.spanish ? "ver más" : "view more"}
         </DDText>
+        <DDIcon name="arrowmore" size="xl" className="text-primary" />
       </div>
     </div>
   );

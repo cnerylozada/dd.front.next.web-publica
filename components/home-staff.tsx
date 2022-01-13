@@ -4,9 +4,9 @@ import {
   DDCardProfile,
   DDText,
 } from "@cnerylozada/dd.front.react.wp.library";
-import { staff } from "../services";
+import { staff } from "@/services";
 import Template from "./template";
-import { languages } from "../utils";
+import { languages } from "@/utils";
 
 const HomeStaff = ({ people, lng }: { people: any; lng: string }) => {
   return (
