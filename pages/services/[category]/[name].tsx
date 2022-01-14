@@ -23,12 +23,11 @@ export async function getStaticProps(context: any) {
 }
 
 const ServiceCategoryDetail = ({ mainService }: { mainService: any }) => {
-  const { service } = mainService;
   return (
     <>
       <ServiceCoverpage
-        title={service.title_en}
-        description={service.description_en}
+        title={mainService?.service.title_en}
+        description={mainService?.service.description_en}
       />
     </>
   );
