@@ -1,4 +1,5 @@
 import { getBusinessLineByName } from "@/services";
+import { ServiceCoverpage } from "@/templates";
 
 export const getStaticPaths = async () => {
   return {
@@ -15,17 +16,20 @@ export const getStaticPaths = async () => {
 };
 
 export async function getStaticProps(context: any) {
-  const service = await getBusinessLineByName(context.params.name);
+  const mainService = await getBusinessLineByName(context.params.name);
   return {
-    props: { service },
+    props: { mainService },
   };
 }
 
-const ServiceCategoryDetail = ({ service }: { service: any }) => {
+const ServiceCategoryDetail = ({ mainService }: { mainService: any }) => {
+  const { service } = mainService;
   return (
     <>
-      <div className="mt-12">qwewqeqweqe</div>
-      <div>{JSON.stringify(service)}</div>
+      <ServiceCoverpage
+        title={service.title_en}
+        description={service.description_en}
+      />
     </>
   );
 };

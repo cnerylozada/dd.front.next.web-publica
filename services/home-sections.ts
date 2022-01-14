@@ -81,7 +81,7 @@ export const serviceCategories = [
     services: [
       {
         id: 1,
-        slug: "development",
+        slug: "software-development",
         name_es: "Development",
         name_en: "Development",
         description_es: "Desarrollo de software para escalar tu negocio.",
