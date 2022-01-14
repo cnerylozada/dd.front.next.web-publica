@@ -21,7 +21,7 @@ const Home = ({ sections }: { sections: any }) => {
     <>
       <HomeCoverPage cover={sections.cover} lng={store.ddLanguage} />
       <HomeServices
-        services={sections.services_section}
+        mainSection={sections.services_section}
         lng={store.ddLanguage}
       />
       <HomeStaff people={sections.people_section} lng={store.ddLanguage} />

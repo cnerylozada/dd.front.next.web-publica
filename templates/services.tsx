@@ -1,4 +1,5 @@
 import Image from "next/image";
+import router from "next/router";
 import React from "react";
 import {
   DDText,
@@ -8,12 +9,14 @@ import { getTextColor } from "@/utils";
 
 export const ServicesTemplate = ({
   name,
+  slug,
   description,
   services,
   color,
   lng,
 }: {
   name: string;
+  slug: string;
   description: string;
   services: any;
   color: string;
@@ -54,7 +57,7 @@ export const ServicesTemplate = ({
               color={color}
               align={(index + 1) % 2 ? "left" : "right"}
               className={(index + 1) % 2 ? "" : "ml-auto"}
-              onClick={() => console.log("xxx")}
+              onClick={() => router.push(`services/${slug}/${_.slug}`)}
             />
           ))}
         </div>

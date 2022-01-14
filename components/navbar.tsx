@@ -8,15 +8,28 @@ import {
 import { useStore, setTheme } from "../store";
 import Sidebar from "./sidebar";
 import { navLinks } from "@/utils";
+import { useRouter } from "next/router";
 
 const Navbar = () => {
   const [store, dispatch] = useStore();
+  const { query } = useRouter();
   const [isSidebarShown, setIsSidebarShown] = useState(false);
 
   return (
     <div className="z-20 fixed top-0 left-0 w-full text-text">
       <div className="pr-5 flex justify-between items-center bg-bg2">
-        <DDLogo />
+        <DDLogo
+          type={`${
+            query?.category
+              ? (query.category as
+                  | "classic"
+                  | "accelerator-approach"
+                  | "build-and-integrate"
+                  | "make-it-live"
+                  | "dynamic-culture")
+              : "classic"
+          }`}
+        />
         <div className="hidden lg:flex space-x-10 text-text">
           <DDToggle
             checked={store.ddIsDarkMode}

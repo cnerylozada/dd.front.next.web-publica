@@ -19,6 +19,7 @@ const Services = ({ sections }: { sections: any }) => {
         <ServicesTemplate
           key={index}
           name={_.name}
+          slug={_.slug}
           description={_[`description_${store.ddLanguage}`]}
           services={_.services}
           color={_.color}

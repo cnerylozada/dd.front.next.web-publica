@@ -41,7 +41,7 @@ const HomeCoverPage = ({ cover, lng }: { cover: any; lng: string }) => {
       >
         {cover[`title_${lng}`]}
       </DDText>
-      <div className="lg:flex lg:items-center animate-subtitle-opacity z-10">
+      <div className="lg:flex lg:items-center z-10 animate-subtitle-opacity">
         <DDText
           size="subHeadline"
           weight="light"
@@ -59,7 +59,7 @@ const HomeCoverPage = ({ cover, lng }: { cover: any; lng: string }) => {
           {lng == languages.spanish ? "Contáctanos" : `Let's Talk`}
         </DDButton>
       </div>
-      <div className="absolute bottom-0 z-10">
+      <div className="absolute bottom-0 z-10 animate-subtitle-opacity">
         <DDText
           size="subHeadline"
           weight="light"

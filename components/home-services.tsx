@@ -10,15 +10,21 @@ import { serviceCategories } from "@/services";
 import Template from "./template";
 import { getTextColor } from "@/utils";
 
-const HomeServices = ({ services, lng }: { services: any; lng: string }) => {
+const HomeServices = ({
+  mainSection,
+  lng,
+}: {
+  mainSection: any;
+  lng: string;
+}) => {
   const router = useRouter();
   return (
     <Template className="bg-bg1 text-text">
       <DDText size="headline" weight="bold" className="mb-6 text-primary">
-        {services[`title_${lng}`]}
+        {mainSection[`title_${lng}`]}
       </DDText>
       <DDText size="subHeadline" weight="light" className="mb-24">
-        {services[`description_${lng}`]}
+        {mainSection[`description_${lng}`]}
       </DDText>
 
       {serviceCategories.map((_, index) => (

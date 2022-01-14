@@ -43,7 +43,7 @@ export const serviceCategories = [
     services: [
       {
         id: 1,
-        slug: "tech-accelerator-team-service",
+        slug: "tech-accelerator-team",
         name_es: "Tech Accelerator Team",
         name_en: "Tech Accelerator Team",
         description_es:
@@ -52,7 +52,7 @@ export const serviceCategories = [
       },
       {
         id: 2,
-        slug: "devops-service",
+        slug: "dev-ops",
         name_es: "DevOps",
         name_en: "DevOps",
         description_es:
@@ -62,7 +62,7 @@ export const serviceCategories = [
       },
       {
         id: 3,
-        slug: "agile-service",
+        slug: "agile",
         name_es: "Agile",
         name_en: "Agile",
         description_es:
@@ -81,7 +81,7 @@ export const serviceCategories = [
     services: [
       {
         id: 1,
-        slug: "development-service",
+        slug: "development",
         name_es: "Development",
         name_en: "Development",
         description_es: "Desarrollo de software para escalar tu negocio.",
@@ -116,7 +116,7 @@ export const serviceCategories = [
     services: [
       {
         id: 1,
-        slug: "cloud-engineering-service",
+        slug: "cloud",
         name_es: "Cloud",
         name_en: "Cloud",
         description_es:
@@ -126,7 +126,7 @@ export const serviceCategories = [
       },
       {
         id: 2,
-        slug: "qa-automation-service",
+        slug: "automation-engineering-and-qa",
         name_es: "QA Automation",
         name_en: "QA Automation",
         description_es: "Nos comprometemos con la calidad de tu producto.",
@@ -144,21 +144,21 @@ export const serviceCategories = [
     services: [
       {
         id: 1,
-        slug: "conversion-digital-service",
-        name_es: "Gestión del cambio y conversión digital",
-        name_en: "Change management and digital conversion",
-        description_es: "Cultura y entendimiento de la adopción tecnológica.",
-        description_en: "Culture and understanding of technology adoption.",
-      },
-      {
-        id: 2,
-        slug: "academy-learning-service",
+        slug: "academy-and-learning",
         name_es: "Academy & Learning",
         name_en: "Academy & Learning",
         description_es:
           "Recursos Educativos, metodológicos, técnicos e inspiracionales.",
         description_en:
           "Educational, methodological, technical and inspirational resources.",
+      },
+      {
+        id: 2,
+        slug: "interview-as-a-service",
+        name_es: "Interview as a service",
+        name_en: "Interview as a service",
+        description_es: "Cultura y entendimiento de la adopción tecnológica.",
+        description_en: "Culture and understanding of technology adoption.",
       },
     ],
   },
