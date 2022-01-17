@@ -11,7 +11,7 @@ export const ServiceCoverpage = ({
 }) => {
   return (
     <div
-      className="relative h-screen flex flex-col justify-center items-center 
+      className="relative h-screen px-7 flex flex-col justify-center items-center 
         text-center text-white bg-black"
     >
       <Image

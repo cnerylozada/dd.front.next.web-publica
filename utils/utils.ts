@@ -36,18 +36,25 @@ export const getIconData = (id: string) => {
   };
 };
 
+export const getColorByService = {
+  "accelerator-approach": "text-green",
+  "build-and-integrate": "text-turquoise",
+  "make-it-live": "text-blue",
+  "dynamic-culture": "text-purple",
+};
+
 export const getTextColor = {
   green: "text-green",
+  turquoise: "text-turquoise",
   blue: "text-blue",
   purple: "text-purple",
-  turquoise: "text-turquoise",
 };
 
 export const getBgColor = {
   green: "bg-green",
+  turquoise: "bg-turquoise",
   blue: "bg-blue",
   purple: "bg-purple",
-  turquoise: "bg-turquoise",
 };
 
 export const languages = { spanish: "es", english: "en" };
