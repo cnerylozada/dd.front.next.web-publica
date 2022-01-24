@@ -43,6 +43,13 @@ export const getColorByService = {
   "dynamic-culture": "text-purple",
 };
 
+export const getBorderByService = {
+  "accelerator-approach": "border-green",
+  "build-and-integrate": "border-turquoise",
+  "make-it-live": "border-blue",
+  "dynamic-culture": "border-purple",
+};
+
 export const getTextColor = {
   green: "text-green",
   turquoise: "text-turquoise",

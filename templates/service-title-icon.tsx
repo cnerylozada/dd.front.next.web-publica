@@ -40,17 +40,11 @@ export const ServiceTitleIcon = ({
 
       <div className="lg:flex items-center">
         {!!data.icon && (
-          // <DDIcon
-          //   name={data.icon}
-          //   size="graphic"
-          //   className="mb-10 lg:mb-0 lg:mr-24"
-          // />
-          <div
-            className="mx-auto mb-10 lg:mb-0 lg:mr-24 flex-shrink-0
-             w-64 lg:w-animation h-44 lg:h-60 bg-gray-400"
-          >
-            {data.icon}
-          </div>
+          <DDIcon
+            name={data.icon}
+            size="graphic"
+            className={`block mx-auto mb-10 lg:mb-0 lg:mr-24 ${getColorByService[category]}`}
+          />
         )}
 
         {!!data.Service && (

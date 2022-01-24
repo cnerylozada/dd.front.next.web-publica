@@ -23,13 +23,17 @@ export const ServiceGallery = ({
         <DDText
           size="headline"
           weight="bold"
-          className={`mb-5 lg:mb-14 ${getColorByService[category]}`}
+          className={`mb-5 ${
+            !!Service[`description_${lng}`] ? "lg:mb-14" : "lg:mb-3"
+          } ${getColorByService[category]}`}
         >
           {Service[`title_${lng}`]}
         </DDText>
-        <DDText size="subHeadline" weight="light" className="mb-5 lg:mb-3">
-          {Service[`description_${lng}`]}
-        </DDText>
+        {!!Service[`description_${lng}`] && (
+          <DDText size="subHeadline" weight="light" className="mb-5 lg:mb-3">
+            {Service[`description_${lng}`]}
+          </DDText>
+        )}
       </div>
 
       <div
