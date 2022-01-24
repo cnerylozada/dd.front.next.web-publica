@@ -38,12 +38,12 @@ export const ServiceTitleIcon = ({
         </DDText>
       )}
 
-      <div className="lg:flex items-center">
+      <div className="flex flex-col lg:flex-row items-center">
         {!!data.icon && (
           <DDIcon
             name={data.icon}
             size="graphic"
-            className={`block mx-auto mb-10 lg:mb-0 lg:mr-24 ${getColorByService[category]}`}
+            className={`block mb-10 lg:mb-0 lg:mr-24 ${getColorByService[category]}`}
           />
         )}
 

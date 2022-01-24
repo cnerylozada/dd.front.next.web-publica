@@ -70,7 +70,7 @@ const ServiceCategoryDetail = ({ mainService }: { mainService: any }) => {
         return component;
       })}
 
-      <div>{JSON.stringify(formData)}</div>
+      {/* <div>{JSON.stringify(formData)}</div> */}
     </>
   );
 };
