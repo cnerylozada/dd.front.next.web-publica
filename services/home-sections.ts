@@ -6,6 +6,10 @@ export const getHomeSections = () => {
   return axios.get(`${url}/home`).then(({ data }) => data);
 };
 
+export const getClients = () => {
+  return axios.get(`${url}/clients`).then(({ data }) => data);
+};
+
 export const staff = [
   {
     id: 1,

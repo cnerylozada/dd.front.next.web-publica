@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { DDSvg, DDText } from "@cnerylozada/dd.front.react.wp.library";
 import Template from "./template";
 
@@ -11,23 +11,34 @@ const customers = [
   { id: 6, name: "uno" },
   { id: 7, name: "global" },
   { id: 8, name: "digi" },
+  { id: 9, name: "ricoh" },
 ];
 
-const HomeCustomers = ({ client, lng }: { client: any; lng: string }) => {
+const HomeCustomers = ({
+  description,
+  listClients,
+  lng,
+}: {
+  description: any;
+  listClients: any;
+  lng: string;
+}) => {
   return (
-    <Template className="bg-bg1 text-text">
-      <DDText size="headline" weight="bold" className="mb-12 text-primary">
-        {client[`title_${lng}`]}
-      </DDText>
-      <DDText size="subHeadline" weight="light" className="mb-12">
-        {client[`description_${lng}`]}
-      </DDText>
-      <div className="flex flex-wrap justify-between text-gray3">
-        {customers.map((_) => (
-          <DDSvg key={_.id} name={_.name} />
+    <div className="pt-12 lg:py-38 pb-9 lg:pb-32 bg-bg1 text-text">
+      <div className="mb-2 lg:mb-10  px-7 lg:px-45">
+        <DDText size="headline" weight="bold" className="mb-12 text-primary">
+          {description[`title_${lng}`]}
+        </DDText>
+        <DDText size="subHeadline" weight="light">
+          {description[`description_${lng}`]}
+        </DDText>
+      </div>
+      <div className="mx-auto lg:w-7/12 flex flex-wrap justify-center text-gray3">
+        {listClients.map((_: any) => (
+          <DDSvg key={_.id} name={_.slug} className="mx-1 lg:m-5 my-3" />
         ))}
       </div>
-    </Template>
+    </div>
   );
 };
 

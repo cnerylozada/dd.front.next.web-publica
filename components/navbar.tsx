@@ -4,6 +4,7 @@ import {
   DDLogo,
   DDText,
   DDToggle,
+  DDIcon,
 } from "@cnerylozada/dd.front.react.wp.library";
 import { useStore, setTheme } from "../store";
 import Sidebar from "./sidebar";
@@ -50,7 +51,7 @@ const Navbar = () => {
           ))}
         </div>
         <div onClick={() => setIsSidebarShown((_) => !_)} className="lg:hidden">
-          Ξ
+          <DDIcon name="menu" />
         </div>
       </div>
       {isSidebarShown && <Sidebar setIsSidebarShown={setIsSidebarShown} />}

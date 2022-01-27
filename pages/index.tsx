@@ -1,4 +1,4 @@
-import { getHomeSections } from "../services";
+import { getHomeSections, getClients } from "@/services";
 import { useStore } from "../store";
 import {
   HomeCoverPage,
@@ -10,12 +10,19 @@ import {
 
 export async function getStaticProps() {
   const sections = await getHomeSections();
+  const listClients = await getClients();
   return {
-    props: { sections },
+    props: { sections, listClients },
   };
 }
 
-const Home = ({ sections }: { sections: any }) => {
+const Home = ({
+  sections,
+  listClients,
+}: {
+  sections: any;
+  listClients: any;
+}) => {
   const [store] = useStore();
   return (
     <>
@@ -25,7 +32,11 @@ const Home = ({ sections }: { sections: any }) => {
         lng={store.ddLanguage}
       />
       <HomeStaff people={sections.people_section} lng={store.ddLanguage} />
-      <HomeCustomers client={sections.client_section} lng={store.ddLanguage} />
+      <HomeCustomers
+        description={sections.client_section}
+        listClients={listClients}
+        lng={store.ddLanguage}
+      />
       <HomeContact />
       {/* <div className="text-green h-100 lg:h-112 mt-22 lg:mt-32 mb-24 lg:mb-40 space-y-20 lg:w-8/12"></div>
       <div className="text-turquoise ml-auto bg-green"></div>

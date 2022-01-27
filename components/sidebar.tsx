@@ -1,6 +1,10 @@
 import React from "react";
 import Link from "next/link";
-import { DDText, DDToggle } from "@cnerylozada/dd.front.react.wp.library";
+import {
+  DDText,
+  DDToggle,
+  DDIcon,
+} from "@cnerylozada/dd.front.react.wp.library";
 import { useStore, setLanguage, setTheme } from "../store";
 import { navLinks, navLanguages } from "@/utils";
 
@@ -56,7 +60,7 @@ const Sidebar = ({ setIsSidebarShown }: { setIsSidebarShown: any }) => {
         ))}
       </div>
       <div onClick={() => setIsSidebarShown(false)} className="mx-auto">
-        X
+        <DDIcon name="exit" size="lg" />
       </div>
     </div>
   );

@@ -13,7 +13,7 @@ export const ServiceRoute = ({
 }) => {
   const { query } = useRouter();
   const category: any = query.category;
-  const { Service } = data;
+  const { Service, SubService } = data;
 
   return (
     <div className={`px-7 lg:px-45 py-12 text-text ${className}`}>
@@ -29,7 +29,7 @@ export const ServiceRoute = ({
       </DDText>
 
       <div className="lg:mx-auto lg:w-4/5">
-        {data.SubService.map((_: any, index: number) => (
+        {SubService.map((_: any, index: number) => (
           <div key={index}>
             {/* {(index + 1) % 2 !== 0 && index !== 0 && (
               <div

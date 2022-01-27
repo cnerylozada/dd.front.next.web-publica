@@ -5,6 +5,7 @@ import {
   ServiceTitleIcon,
   ServiceGallery,
   ServiceRoute,
+  ServiceStack,
 } from "@/templates";
 
 export const getStaticPaths = async () => {
@@ -61,6 +62,15 @@ const ServiceCategoryDetail = ({ mainService }: { mainService: any }) => {
         if (_.route_type === "route")
           component = (
             <ServiceRoute
+              key={index}
+              data={_}
+              lng={store.ddLanguage}
+              className={bgStyle}
+            />
+          );
+        if (_.route_type === "stack")
+          component = (
+            <ServiceStack
               key={index}
               data={_}
               lng={store.ddLanguage}
