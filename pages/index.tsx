@@ -7,6 +7,7 @@ import {
   HomeServices,
   HomeStaff,
 } from "@/components";
+import { useEffect } from "react";
 
 export async function getStaticProps() {
   const sections = await getHomeSections();
@@ -24,6 +25,7 @@ const Home = ({
   listClients: any;
 }) => {
   const [store] = useStore();
+
   return (
     <>
       <HomeCoverPage cover={sections.cover} lng={store.ddLanguage} />

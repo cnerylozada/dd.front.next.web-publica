@@ -1,18 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { DDSvg, DDText } from "@cnerylozada/dd.front.react.wp.library";
-import Template from "./template";
-
-const customers = [
-  { id: 1, name: "vida" },
-  { id: 2, name: "bet" },
-  { id: 3, name: "cardio" },
-  { id: 4, name: "med" },
-  { id: 5, name: "sodimac" },
-  { id: 6, name: "uno" },
-  { id: 7, name: "global" },
-  { id: 8, name: "digi" },
-  { id: 9, name: "ricoh" },
-];
 
 const HomeCustomers = ({
   description,
@@ -35,7 +22,14 @@ const HomeCustomers = ({
       </div>
       <div className="mx-auto lg:w-7/12 flex flex-wrap justify-center text-gray3">
         {listClients.map((_: any) => (
-          <DDSvg key={_.id} name={_.slug} className="mx-1 lg:m-5 my-3" />
+          <DDSvg
+            key={_.id}
+            name={_.slug}
+            onClick={() => {
+              !!_.website ? window.open(_.website, "_blank") : null;
+            }}
+            className="mx-1 lg:m-5 my-3 cursor-pointer"
+          />
         ))}
       </div>
     </div>
