@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { getBusinessLineByName, getBusinessLinePaths } from "@/services";
 import { useStore } from "../../../store";
+import { DDFloatButton } from "@cnerylozada/dd.front.react.wp.library";
 import {
   ServiceCoverpage,
   ServiceTitleIcon,
@@ -29,11 +30,23 @@ const ServiceCategoryDetail = ({ mainService }: { mainService: any }) => {
   let { service, service_section } = mainService;
   const { query } = useRouter();
   const category: any = query.category;
+  const floatButtonColor = {
+    "accelerator-approach": "green",
+    "build-and-integrate": "turquoise",
+    "make-it-live": "blue",
+    "dynamic-culture": "purple",
+  };
 
   const [store] = useStore();
 
   return (
     <>
+      <DDFloatButton
+        icon="contact"
+        color={floatButtonColor[category]}
+        className="fixed z-10 right-5 lg:right-16 bottom-5 lg:bottom-12"
+        onClick={() => window && window.open("mailto:contact@dynamicdevs.com")}
+      />
       <ServiceCoverpage
         title={service[`title_${store.ddLanguage}`]}
         description={service[`description_${store.ddLanguage}`]}
