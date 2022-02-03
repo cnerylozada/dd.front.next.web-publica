@@ -1,3 +1,4 @@
+export * from "./contact-form";
 export * from "./services";
 export * from "./service-coverpage";
 export * from "./service-gallery";

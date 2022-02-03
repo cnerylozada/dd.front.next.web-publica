@@ -1,6 +1,4 @@
 import { DDText, DDIcon } from "@cnerylozada/dd.front.react.wp.library";
-import { useRouter } from "next/router";
-import { getColorByService } from "@/utils";
 
 export const ServiceTitleIcon = ({
   data,
@@ -11,29 +9,18 @@ export const ServiceTitleIcon = ({
   lng: string;
   className: string;
 }) => {
-  const { query } = useRouter();
-  const category: any = query.category;
-
   return (
     <div
       className={`px-7 lg:px-45 h-screen flex flex-col justify-center
-      text-text ${className}`}
+      ${className}`}
     >
       {!!data.Service && (
-        <DDText
-          size="headline"
-          weight="bold"
-          className={`mb-6 lg:mb-14 ${getColorByService[category]}`}
-        >
+        <DDText size="headline" weight="bold" className={`mb-6 lg:mb-14`}>
           {data.Service[`title_${lng}`]}
         </DDText>
       )}
       {!data.Service && (
-        <DDText
-          size="headline"
-          weight="bold"
-          className={`mb-6 lg:mb-10 ${getColorByService[category]}`}
-        >
+        <DDText size="headline" weight="bold" className={`mb-6 lg:mb-10`}>
           {data[`title_${lng}`]}
         </DDText>
       )}
@@ -43,17 +30,17 @@ export const ServiceTitleIcon = ({
           <DDIcon
             name={data.icon}
             size="graphic"
-            className={`block mb-10 lg:mb-0 lg:mr-24 ${getColorByService[category]}`}
+            className={`block mb-10 lg:mb-0 lg:mr-24`}
           />
         )}
 
         {!!data.Service && (
-          <DDText size="subHeadline" weight="light">
+          <DDText size="subHeadline" weight="light" className="text-text">
             {data.Service[`description_${lng}`]}
           </DDText>
         )}
         {!data.Service && (
-          <DDText size="subHeadline" weight="light">
+          <DDText size="subHeadline" weight="light" className="text-text">
             {data[`description_${lng}`]}
           </DDText>
         )}

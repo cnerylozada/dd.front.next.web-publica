@@ -65,6 +65,10 @@ export const getBgColor = {
 };
 
 export const languages = { spanish: "es", english: "en" };
+export const navLanguages = [
+  { id: 1, label: "sp", value: languages.spanish },
+  { id: 2, label: "en", value: languages.english },
+];
 
 export const navLinks = [
   {
@@ -81,10 +85,54 @@ export const navLinks = [
   },
 ];
 
-export const navLanguages = [
-  { id: 1, label: "sp", value: languages.spanish },
-  { id: 2, label: "en", value: languages.english },
-];
+export const contactForm = {
+  nameAndLastname: {
+    label_es: "Nombre y Apellido",
+    label_en: "Name and Last name",
+    placeholder_es: "Nombre Apellido",
+    placeholder_en: "Name Last name",
+  },
+  email: {
+    label_es: "Correo Electrónico",
+    label_en: "Email address",
+    placeholder_es: "tumail@mail.com",
+    placeholder_en: "youremail@mail.com",
+  },
+  company: {
+    label_es: "Compañía",
+    label_en: "Company",
+    placeholder_es: "Nombre de la compañía a la que representas",
+    placeholder_en: "Company you work for",
+  },
+  message: {
+    label_es: "Mensage",
+    label_en: "Message",
+    placeholder_es: "Escrbir máximo 300 caracteres",
+    placeholder_en: "Write a maximum of 300 characters",
+  },
+};
+export const validationInput = {
+  nameAndLastname: {
+    required_es: "Nombre Apellido es un campo requerido",
+    required_en: "Name and Lastname is a required field",
+  },
+  email: {
+    required_es: "Correo Electrónico es un campo requerido",
+    required_en: "Email address is a required field",
+    valid_es: "Debe ser un correo electrónico válido",
+    valid_en: "It must be a valid email",
+  },
+  company: {
+    required_es: "Compañía es un campo requerido",
+    required_en: "Company is a required field",
+  },
+  message: {
+    required_es: "Mensage es un campo requerido",
+    required_en: "Message is a required field",
+    max_es: "Debe ser 300 caracteres máximo",
+    max_en: "Must be 300 characters maximum",
+  },
+};
 
 export const socialNetworks = [
   { name: "fb", link: "https://web.facebook.com/dynamicdevs" },
