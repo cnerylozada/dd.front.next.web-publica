@@ -1,12 +1,78 @@
-# You can override the included template(s) by including variable overrides
-# SAST customization: https://docs.gitlab.com/ee/user/application_security/sast/#customizing-the-sast-settings
-# Secret Detection customization: https://docs.gitlab.com/ee/user/application_security/secret_detection/#customizing-settings
-# Dependency Scanning customization: https://docs.gitlab.com/ee/user/application_security/dependency_scanning/#customizing-the-dependency-scanning-settings
-# Note that environment variables can be set in several places
-# See https://docs.gitlab.com/ee/ci/variables/#cicd-variable-precedence
 stages:
-- test
-sast:
-  stage: test
-include:
-- template: Security/SAST.gitlab-ci.yml
+  - linter
+  - build
+  - deploy
+
+default:
+  image: node:latest
+
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+
+.npm_install: &npm_install |
+  NODE_ENV=build && npm ci && NODE_ENV=production
+
+.cache_npm:
+  cache:
+    untracked: true
+    key: $CI_JOB_NAME
+    paths:
+      - node_modules/
+
+linter:
+  extends:
+    - .cache_npm
+  before_script:
+    - *npm_install
+  stage: linter
+  script:
+    - npm run lint
+
+build:
+  extends:
+    - .cache_npm
+  before_script:
+    - *npm_install
+  stage: build
+  script:
+    - npm run build
+  only:
+    - develop
+    - master
+  artifacts:
+    paths:
+      - .next
+
+deploy_develop:
+  stage: deploy
+  image: mcr.microsoft.com/azure-cli:latest
+  dependencies:
+    - build
+  script:
+    - |
+      az login --service-principal \
+        -u $AZURE_APP_ID \
+        -p $AZURE_PASSWORD \
+        -t $AZURE_TENANT
+    - az storage blob delete-batch -s home-dev --connection-string $AZ_STORAGE_CONNECTION_STRING
+    - az storage blob upload-batch -d home-dev -s dist --connection-string $AZ_STORAGE_CONNECTION_STRING
+    - az cdn endpoint purge -g $CDN_RESOURCE_GROUP -n $CDN_ENDPOINT --profile-name $CDN_PROFILE --content-paths "$CONTENT_PATH" --no-wait --subscription $AZURE_SUBSCRIPTION_ID
+  only:
+    - develop
+
+deploy_production:
+  stage: deploy
+  image: mcr.microsoft.com/azure-cli:latest
+  dependencies:
+    - build
+  script:
+    - |
+      az login --service-principal \
+        -u $AZURE_APP_ID \
+        -p $AZURE_PASSWORD \
+        -t $AZURE_TENANT
+    - az storage blob delete-batch -s home-prod --connection-string $AZ_STORAGE_CONNECTION_STRING
+    - az storage blob upload-batch -d home-prod -s dist --connection-string $AZ_STORAGE_CONNECTION_STRING
+    - az cdn endpoint purge -g $CDN_RESOURCE_GROUP -n $CDN_ENDPOINT --profile-name $CDN_PROFILE --content-paths "$CONTENT_PATH" --no-wait --subscription $AZURE_SUBSCRIPTION_ID
+  only:
+    - master
