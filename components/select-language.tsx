@@ -10,7 +10,7 @@ export const SelectLanguage = ({ currentLng }: { currentLng: string }) => {
   useEffect(() => {
     const ddSelectLanguage = document.getElementById("ddSelectLanguage");
     window.onclick = function (e: any) {
-      if (!ddSelectLanguage?.contains(e.target)) setIsSelected((_) => !_);
+      if (!ddSelectLanguage?.contains(e.target)) setIsSelected(false);
     };
   }, []);
 
