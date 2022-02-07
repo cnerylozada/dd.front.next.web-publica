@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { useStore, setTheme } from "../store";
 import {
   DDLogo,
   DDText,
   DDToggle,
   DDIcon,
 } from "@cnerylozada/dd.front.react.wp.library";
-import { useStore, setTheme } from "../store";
+import { SelectLanguage } from "./select-language";
 import Sidebar from "./sidebar";
 import { navLinks } from "@/utils";
-import { useRouter } from "next/router";
 
 const Navbar = () => {
   const [store, dispatch] = useStore();
@@ -31,7 +32,7 @@ const Navbar = () => {
               : "classic"
           }`}
         />
-        <div className="hidden lg:flex space-x-10 text-text">
+        <div className="hidden lg:flex items-center space-x-10 text-text">
           <DDToggle
             checked={store.ddIsDarkMode}
             onClick={() => {
@@ -49,6 +50,7 @@ const Navbar = () => {
               </a>
             </Link>
           ))}
+          <SelectLanguage currentLng={store.ddLanguage} />
         </div>
         <div onClick={() => setIsSidebarShown((_) => !_)} className="lg:hidden">
           <DDIcon name="menu" />

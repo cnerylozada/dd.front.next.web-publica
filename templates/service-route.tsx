@@ -1,6 +1,5 @@
 import { DDText, DDIcon } from "@cnerylozada/dd.front.react.wp.library";
-import { useRouter } from "next/router";
-import { getColorByService, getBorderByService } from "@/utils";
+import { getBorderByService } from "@/utils";
 
 export const ServiceRoute = ({
   data,
@@ -11,62 +10,51 @@ export const ServiceRoute = ({
   lng: string;
   className: string;
 }) => {
-  const { query } = useRouter();
-  const category: any = query.category;
   const { Service, SubService } = data;
 
   return (
-    <div className={`px-7 lg:px-45 py-12 text-text ${className}`}>
-      <DDText
-        size="headline"
-        weight="bold"
-        className={`mb-5 ${getColorByService[category]}`}
-      >
-        {Service[`title_${lng}`]}
-      </DDText>
-      <DDText size="subHeadline" weight="light">
-        {Service[`description_${lng}`]}
-      </DDText>
+    <div className={`py-12 lg:py-38 ${className}`}>
+      <div className="mb-14 lg:mb-16 px-7 lg:px-45">
+        <DDText size="headline" weight="bold" className={`mb-5`}>
+          {Service[`title_${lng}`]}
+        </DDText>
+        <DDText size="subHeadline" weight="light" className="text-text">
+          {Service[`description_${lng}`]}
+        </DDText>
+      </div>
 
-      <div className="lg:mx-auto lg:w-4/5">
+      <div className="mx-auto px-7 lg:px-0 w-route lg:w-222 flex flex-col">
         {SubService.map((_: any, index: number) => (
-          <div key={index}>
-            {/* {(index + 1) % 2 !== 0 && index !== 0 && (
+          <div
+            key={index}
+            className={`relative mb-25 last:mb-0 lg:mb-0 lg:pt-5 ${
+              !!((index + 1) % 2) ? "" : "self-end"
+            } flex flex-col items-center w-62 lg:w-80 h-62 lg:h-80
+              rounded-full border border-dashed text-center`}
+          >
+            {!!((index + 1) % 2) && index !== 0 && (
               <div
-                className={`-z-10 sm:-my-24 mx-auto w-1/5 sm:w-4/12 h-24 sm:h-44`}
-                style={{
-                  background:
-                    "linear-gradient(to bottom right, transparent calc(50% - 1px), yellow , transparent calc(50% + 1px) )",
-                }}
+                className={`absolute top-0 left-1/2 w-28
+                origin-top-left -rotate-60 border-t border-dashed`}
               ></div>
-            )} */}
-            <div
-              className={`${
-                !!((index + 1) % 2) ? "mr-auto" : "ml-auto"
-              } sm:pt-5 flex flex-col items-center w-62 sm:w-80 h-62 sm:h-80
-              rounded-full border ${getBorderByService[category]} text-center`}
+            )}
+            <DDIcon name={_.icon} size="xl" />
+            <DDText
+              size="subHeadline"
+              weight="bold"
+              className="my-2 lg:my-5 text-text"
             >
-              <DDIcon
-                name={_.icon}
-                size="xl"
-                className={getColorByService[category]}
-              />
-              <DDText size="subHeadline" weight="bold" className="my-2 sm:my-5">
-                {_.Service[`title_${lng}`]}
-              </DDText>
-              <DDText weight="light" className="w-4/5">
-                {_.Service[`description_${lng}`]}
-              </DDText>
-            </div>
-            {/* {!!((index + 1) % 2) && index !== data.SubService.length - 1 && (
+              {_.Service[`title_${lng}`]}
+            </DDText>
+            <DDText weight="light" className="w-4/5 text-text">
+              {_.Service[`description_${lng}`]}
+            </DDText>
+            {!!((index + 1) % 2) && index !== SubService.length - 1 && (
               <div
-                className={`sm:-my-24 mx-auto w-1/5 sm:w-4/12 h-24 sm:h-44`}
-                style={{
-                  background:
-                    "linear-gradient(to top right, transparent calc(50% - 1px), yellow , transparent calc(50% + 1px) )",
-                }}
+                className={`absolute top-full left-1/2 w-28 
+                  origin-top-left rotate-60 border-t border-dashed`}
               ></div>
-            )} */}
+            )}
           </div>
         ))}
       </div>

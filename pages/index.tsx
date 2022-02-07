@@ -1,13 +1,13 @@
+import { DDFloatButton } from "@cnerylozada/dd.front.react.wp.library";
 import { getHomeSections, getClients } from "@/services";
 import { useStore } from "../store";
+import { ContactForm } from "@/templates";
 import {
   HomeCoverPage,
-  HomeContact,
   HomeCustomers,
   HomeServices,
   HomeStaff,
 } from "@/components";
-import { useEffect } from "react";
 
 export async function getStaticProps() {
   const sections = await getHomeSections();
@@ -28,6 +28,11 @@ const Home = ({
 
   return (
     <>
+      <DDFloatButton
+        icon="contact"
+        className="fixed z-10 right-5 lg:right-16 bottom-5 lg:bottom-12"
+        onClick={() => window && window.open("mailto:contact@dynamicdevs.com")}
+      />
       <HomeCoverPage cover={sections.cover} lng={store.ddLanguage} />
       <HomeServices
         mainSection={sections.services_section}
@@ -39,7 +44,13 @@ const Home = ({
         listClients={listClients}
         lng={store.ddLanguage}
       />
-      <HomeContact />
+      <div id="contactSection">
+        <ContactForm
+          mainSection={sections.contact_section}
+          lng={store.ddLanguage}
+          className="bg-bg2 text-primary"
+        />
+      </div>
       {/* <div className="text-green h-100 lg:h-112 mt-22 lg:mt-32 mb-24 lg:mb-40 space-y-20 lg:w-8/12"></div>
       <div className="text-turquoise ml-auto bg-green"></div>
       <div className="text-blue bg-blue"></div>

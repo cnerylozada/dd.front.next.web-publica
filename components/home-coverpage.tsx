@@ -53,7 +53,9 @@ const HomeCoverPage = ({ cover, lng }: { cover: any; lng: string }) => {
         </DDText>
         <DDButton
           onClick={() => {
-            document.getElementById("contactSection")?.scrollIntoView();
+            document
+              .getElementById("contactSection")
+              ?.scrollIntoView({ behavior: "smooth" });
           }}
         >
           {lng == languages.spanish ? "Contáctanos" : `Let's Talk`}

@@ -1,12 +1,16 @@
+import { useRouter } from "next/router";
 import { getBusinessLineByName, getBusinessLinePaths } from "@/services";
 import { useStore } from "../../../store";
+import { DDFloatButton } from "@cnerylozada/dd.front.react.wp.library";
 import {
   ServiceCoverpage,
   ServiceTitleIcon,
   ServiceGallery,
   ServiceRoute,
   ServiceStack,
+  ContactForm,
 } from "@/templates";
+import { getColorByService } from "@/utils";
 
 export const getStaticPaths = async () => {
   return {
@@ -24,20 +28,44 @@ export async function getStaticProps(context: any) {
 
 const ServiceCategoryDetail = ({ mainService }: { mainService: any }) => {
   let { service, service_section } = mainService;
-  let index = service_section.length - 1;
-  const formData = service_section[index];
-  service_section = service_section.slice(0, index);
+  const { query } = useRouter();
+  const category: any = query.category;
+  const floatButtonColor = {
+    "accelerator-approach": "green",
+    "build-and-integrate": "turquoise",
+    "make-it-live": "blue",
+    "dynamic-culture": "purple",
+  };
+
   const [store] = useStore();
 
   return (
     <>
+      <DDFloatButton
+        icon="contact"
+        color={floatButtonColor[category]}
+        className="fixed z-10 right-5 lg:right-16 bottom-5 lg:bottom-12"
+        onClick={() => window && window.open("mailto:contact@dynamicdevs.com")}
+      />
       <ServiceCoverpage
-        title={service.title_en}
-        description={service.description_en}
+        title={service[`title_${store.ddLanguage}`]}
+        description={service[`description_${store.ddLanguage}`]}
       />
       {service_section.map((_: any, index: number) => {
         const bgStyle = (index + 1) % 2 === 0 ? "bg-bg1" : "bg-bg2";
+        const classess = `${bgStyle} ${getColorByService[category]}`;
         let component;
+
+        if (index === service_section.length - 1) {
+          return (component = (
+            <ContactForm
+              key={index}
+              mainSection={_}
+              lng={store.ddLanguage}
+              className={classess}
+            />
+          ));
+        }
         if (
           _.__component === "service.title" ||
           _.__component === "service.service-icon"
@@ -47,7 +75,7 @@ const ServiceCategoryDetail = ({ mainService }: { mainService: any }) => {
               key={index}
               data={_}
               lng={store.ddLanguage}
-              className={bgStyle}
+              className={classess}
             />
           );
         if (_.route_type === "gallery")
@@ -56,7 +84,7 @@ const ServiceCategoryDetail = ({ mainService }: { mainService: any }) => {
               key={index}
               data={_}
               lng={store.ddLanguage}
-              className={bgStyle}
+              className={classess}
             />
           );
         if (_.route_type === "route")
@@ -65,7 +93,7 @@ const ServiceCategoryDetail = ({ mainService }: { mainService: any }) => {
               key={index}
               data={_}
               lng={store.ddLanguage}
-              className={bgStyle}
+              className={classess}
             />
           );
         if (_.route_type === "stack")
@@ -74,13 +102,11 @@ const ServiceCategoryDetail = ({ mainService }: { mainService: any }) => {
               key={index}
               data={_}
               lng={store.ddLanguage}
-              className={bgStyle}
+              className={classess}
             />
           );
         return component;
       })}
-
-      {/* <div>{JSON.stringify(formData)}</div> */}
     </>
   );
 };

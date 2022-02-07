@@ -53,17 +53,25 @@ module.exports = {
       },
       margin: {
         22: "88px",
+        25: "100px",
       },
+      minWidth: { 90: "360px" },
       padding: {
         38: "152px",
         45: "180px",
       },
+      rotate: {
+        60: "60deg",
+      },
       width: {
+        30: "120px",
         50: "200px",
         58: "232px",
         62: "248px",
+        route: "360px",
         122.5: "490px",
         animation: "345px",
+        222: "890px",
       },
     },
   },
