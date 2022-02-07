@@ -47,8 +47,11 @@ export const ServicesTemplate = ({
           {description}
         </DDText>
       </div>
-      <div className="px-7 flex justify-center bg-bg2">
-        <div className="mt-22 lg:mt-32 mb-24 lg:mb-40 space-y-20 text-text lg:w-8/12">
+      <div className="bg-bg2">
+        <div
+          className="py-21 lg:py-32 px-7 lg:px-0 mx-auto
+          max-w-[1440px] lg:w-3/5 space-y-20 text-text"
+        >
           {services.map((_: any, index: number) => (
             <DDServiceDetail
               key={index}
