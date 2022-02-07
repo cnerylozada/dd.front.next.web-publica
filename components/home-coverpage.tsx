@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import {
   DDButton,
   DDText,
@@ -13,13 +12,14 @@ const HomeCoverPage = ({ cover, lng }: { cover: any; lng: string }) => {
       className="relative px-5 h-screen flex flex-col justify-center items-center 
       text-white text-center bg-black"
     >
-      <Image
+      {/* <Image
         alt="home-banner"
         src="https://dynamicdevscommon.blob.core.windows.net/web/banner-last-frame.png"
+        loader={() => 'https://dynamicdevscommon.blob.core.windows.net/web/banner-last-frame.png'}
         layout="fill"
         objectFit="cover"
         quality={100}
-      />
+      /> */}
       <video
         autoPlay
         muted

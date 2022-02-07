@@ -1,4 +1,3 @@
-import Image from "next/image";
 import router from "next/router";
 import React from "react";
 import {
@@ -29,13 +28,14 @@ export const ServicesTemplate = ({
         className="relative px-7 lg:px-45 h-100 lg:h-112 
         flex flex-col justify-center text-white text-center"
       >
-        <Image
+        {/* <Image
           alt="service-banner"
           src="https://dynamicdevscommon.blob.core.windows.net/web/banner-last-frame.png"
           layout="fill"
+          loader={() => 'https://dynamicdevscommon.blob.core.windows.net/web/banner-last-frame.png'}
           objectFit="cover"
           quality={100}
-        />
+        /> */}
         <DDText
           size="headline"
           weight="bold"

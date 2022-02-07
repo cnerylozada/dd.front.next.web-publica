@@ -35,13 +35,13 @@ build:
     - *npm_install
   stage: build
   script:
-    - npm run build
+    - npm run export
   only:
     - develop
     - master
   artifacts:
     paths:
-      - .next
+      - out
 
 deploy_develop:
   stage: deploy
@@ -55,7 +55,7 @@ deploy_develop:
         -p $AZURE_PASSWORD \
         -t $AZURE_TENANT
     - az storage blob delete-batch -s app-shell-dev --connection-string $AZ_STORAGE_CONNECTION_STRING
-    - az storage blob upload-batch -d app-shell-dev -s .next --connection-string $AZ_STORAGE_CONNECTION_STRING
+    - az storage blob upload-batch -d app-shell-dev -s out --connection-string $AZ_STORAGE_CONNECTION_STRING
     - az cdn endpoint purge -g $CDN_RESOURCE_GROUP -n $CDN_ENDPOINT --profile-name $CDN_PROFILE --content-paths "$CONTENT_PATH" --no-wait --subscription $AZURE_SUBSCRIPTION_ID
   only:
     - develop
@@ -72,7 +72,7 @@ deploy_production:
         -p $AZURE_PASSWORD \
         -t $AZURE_TENANT
     - az storage blob delete-batch -s app-shell-prod --connection-string $AZ_STORAGE_CONNECTION_STRING
-    - az storage blob upload-batch -d app-shell-prod -s .next --connection-string $AZ_STORAGE_CONNECTION_STRING
-    - az cdn endpoint purge -g $CDN_RESOURCE_GROUP -n $CDN_ENDPOINT --profile-name $CDN_PROFILE --content-paths "$CONTENT_PATH" --no-wait --subscription $AZURE_SUBSCRIPTION_ID
+    - az storage blob upload-batch -d app-shell-prod -s out --connection-string $AZ_STORAGE_CONNECTION_STRING
+    - az cdn endpoint purge -g DynamicDevs -n $CDN_ENDPOINT --profile-name $CDN_PROFILE --content-paths "$CONTENT_PATH" --no-wait --subscription $AZURE_SUBSCRIPTION_ID
   only:
     - master
