@@ -55,7 +55,11 @@ const Home = ({
       <div className="text-turquoise ml-auto bg-green"></div>
       <div className="text-blue bg-blue"></div>
       <div className="text-purple bg-purple"></div>
-      <div className="text-purple bg-turquoise"></div> */}
+      <div className="text-purple bg-turquoise"></div>
+      <div className="border-green"></div>
+      <div className="border-turquoise"></div>
+      <div className="border-blue"></div>
+      <div className="border-purple"></div> */}
     </>
   );
 };

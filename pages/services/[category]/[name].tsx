@@ -10,7 +10,7 @@ import {
   ServiceStack,
   ContactForm,
 } from "@/templates";
-import { getColorByService } from "@/utils";
+import { getColorByService, getBorderByService } from "@/utils";
 
 export const getStaticPaths = async () => {
   return {
@@ -53,6 +53,7 @@ const ServiceCategoryDetail = ({ mainService }: { mainService: any }) => {
       />
       {service_section.map((_: any, index: number) => {
         const bgStyle = (index + 1) % 2 === 0 ? "bg-bg1" : "bg-bg2";
+        const borderStyles = getBorderByService[category];
         const classess = `${bgStyle} ${getColorByService[category]}`;
         let component;
 
@@ -94,6 +95,7 @@ const ServiceCategoryDetail = ({ mainService }: { mainService: any }) => {
               data={_}
               lng={store.ddLanguage}
               className={classess}
+              borderStyles={borderStyles}
             />
           );
         if (_.route_type === "stack")

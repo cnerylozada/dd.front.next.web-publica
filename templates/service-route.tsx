@@ -1,14 +1,15 @@
 import { DDText, DDIcon } from "@cnerylozada/dd.front.react.wp.library";
-import { getBorderByService } from "@/utils";
 
 export const ServiceRoute = ({
   data,
   lng,
   className,
+  borderStyles,
 }: {
   data: any;
   lng: string;
   className: string;
+  borderStyles: string;
 }) => {
   const { Service, SubService } = data;
 
@@ -29,13 +30,13 @@ export const ServiceRoute = ({
             key={index}
             className={`relative mb-25 last:mb-0 lg:mb-0 lg:pt-5 ${
               !!((index + 1) % 2) ? "" : "self-end"
-            } flex flex-col items-center w-62 lg:w-80 h-62 lg:h-80
+            } flex flex-col items-center w-62 lg:w-80 h-62 lg:h-80 ${borderStyles}
               rounded-full border border-dashed text-center`}
           >
             {!!((index + 1) % 2) && index !== 0 && (
               <div
-                className={`absolute top-0 left-1/2 w-28
-                origin-top-left -rotate-60 border-t border-dashed`}
+                className={`absolute top-0 lg:top-21 left-1/2 lg:left-74 ${borderStyles}
+                w-28 lg:w-84 origin-top-left -rotate-60 lg:-rotate-32 border-t border-dashed`}
               ></div>
             )}
             <DDIcon name={_.icon} size="xl" />
@@ -51,8 +52,8 @@ export const ServiceRoute = ({
             </DDText>
             {!!((index + 1) % 2) && index !== SubService.length - 1 && (
               <div
-                className={`absolute top-full left-1/2 w-28 
-                  origin-top-left rotate-60 border-t border-dashed`}
+                className={`absolute top-full lg:top-auto lg:bottom-18 left-1/2 lg:left-72 ${borderStyles}
+                  w-28 lg:w-84 origin-top-left rotate-60 lg:rotate-32 border-t border-dashed`}
               ></div>
             )}
           </div>

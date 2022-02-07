@@ -51,6 +51,7 @@ module.exports = {
         100: "400px",
         112: "448px",
       },
+
       margin: {
         22: "88px",
         25: "100px",
@@ -61,16 +62,23 @@ module.exports = {
         45: "180px",
       },
       rotate: {
+        32: "32deg",
         60: "60deg",
+      },
+      spacing: {
+        18: "72px",
+        21: "84px",
+        74: "296px",
       },
       width: {
         30: "120px",
         50: "200px",
         58: "232px",
         62: "248px",
+        84: "336px",
+        animation: "345px",
         route: "360px",
         122.5: "490px",
-        animation: "345px",
         222: "890px",
       },
     },
