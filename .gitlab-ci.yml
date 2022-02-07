@@ -54,8 +54,8 @@ deploy_develop:
         -u $AZURE_APP_ID \
         -p $AZURE_PASSWORD \
         -t $AZURE_TENANT
-    - az storage blob delete-batch -s home-dev --connection-string $AZ_STORAGE_CONNECTION_STRING
-    - az storage blob upload-batch -d home-dev -s dist --connection-string $AZ_STORAGE_CONNECTION_STRING
+    - az storage blob delete-batch -s app-shell-dev --connection-string $AZ_STORAGE_CONNECTION_STRING
+    - az storage blob upload-batch -d app-shell-dev -s .next --connection-string $AZ_STORAGE_CONNECTION_STRING
     - az cdn endpoint purge -g $CDN_RESOURCE_GROUP -n $CDN_ENDPOINT --profile-name $CDN_PROFILE --content-paths "$CONTENT_PATH" --no-wait --subscription $AZURE_SUBSCRIPTION_ID
   only:
     - develop
@@ -71,8 +71,8 @@ deploy_production:
         -u $AZURE_APP_ID \
         -p $AZURE_PASSWORD \
         -t $AZURE_TENANT
-    - az storage blob delete-batch -s home-prod --connection-string $AZ_STORAGE_CONNECTION_STRING
-    - az storage blob upload-batch -d home-prod -s dist --connection-string $AZ_STORAGE_CONNECTION_STRING
+    - az storage blob delete-batch -s app-shell-prod --connection-string $AZ_STORAGE_CONNECTION_STRING
+    - az storage blob upload-batch -d app-shell-prod -s .next --connection-string $AZ_STORAGE_CONNECTION_STRING
     - az cdn endpoint purge -g $CDN_RESOURCE_GROUP -n $CDN_ENDPOINT --profile-name $CDN_PROFILE --content-paths "$CONTENT_PATH" --no-wait --subscription $AZURE_SUBSCRIPTION_ID
   only:
     - master
