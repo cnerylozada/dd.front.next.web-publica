@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import Image from "next/image";
 import {
@@ -13,13 +14,19 @@ const HomeCoverPage = ({ cover, lng }: { cover: any; lng: string }) => {
       className="relative px-5 h-screen flex flex-col justify-center items-center 
       text-white text-center bg-black"
     >
-      <Image
+      {/* <Image
         alt="home-banner"
         src="https://dynamicdevscommon.blob.core.windows.net/web/banner-last-frame.png"
         layout="fill"
         objectFit="cover"
         quality={100}
+      /> */}
+      <img
+        src={`https://assets.dynamicdevs.io/web/banner-last-frame.png`}
+        alt="service-banner"
+        className="absolute top-0 left-0 w-full h-screen object-cover"
       />
+
       <video
         autoPlay
         muted

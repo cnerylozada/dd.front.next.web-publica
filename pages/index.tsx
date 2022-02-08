@@ -30,7 +30,7 @@ const Home = ({
     <>
       <DDFloatButton
         icon="contact"
-        className="fixed z-10 right-5 lg:right-16 bottom-5 lg:bottom-12"
+        className="fixed z-10 right-5 lg:right-16 bottom-5 lg:bottom-20"
         onClick={() => window && window.open("mailto:contact@dynamicdevs.com")}
       />
       <HomeCoverPage cover={sections.cover} lng={store.ddLanguage} />

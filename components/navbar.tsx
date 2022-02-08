@@ -13,6 +13,7 @@ import Sidebar from "./sidebar";
 import { navLinks } from "@/utils";
 
 const Navbar = () => {
+  const router = useRouter();
   const [store, dispatch] = useStore();
   const { query } = useRouter();
   const [isSidebarShown, setIsSidebarShown] = useState(false);
@@ -31,6 +32,8 @@ const Navbar = () => {
                   | "dynamic-culture")
               : "classic"
           }`}
+          className="cursor-pointer"
+          onClick={() => router.push("/")}
         />
         <div className="hidden lg:flex items-center space-x-10 text-text">
           <DDToggle

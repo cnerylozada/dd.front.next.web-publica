@@ -59,3 +59,19 @@
   --gray2: var(--d-gray2);
   --gray3: var(--d-gray3);
 }
+
+.dd-acceleratorApproachAnimation g path {
+  fill: var(--green);
+}
+
+.dd-buildIntegrateAnimation g path {
+  fill: var(--turquoise);
+}
+
+.dd-makeItLiveAnimation g path {
+  fill: var(--blue);
+}
+
+.dd-dynamicCultureAnimation g path {
+  fill: var(--purple);
+}

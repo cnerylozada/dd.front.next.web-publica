@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
 import router from "next/router";
 import React from "react";
@@ -29,12 +30,17 @@ export const ServicesTemplate = ({
         className="relative px-7 lg:px-45 h-100 lg:h-112 
         flex flex-col justify-center text-white text-center"
       >
-        <Image
+        {/* <Image
           alt="service-banner"
           src={`https://dynamicdevscommon.blob.core.windows.net/web/bg-${color}.png`}
           layout="fill"
           objectFit="cover"
           quality={100}
+        /> */}
+        <img
+          src={`https://assets.dynamicdevs.io/web/bg-${color}.png`}
+          alt="service-banner"
+          className="absolute top-0 left-0 w-full h-100 lg:h-112 object-cover"
         />
         <DDText
           size="headline"

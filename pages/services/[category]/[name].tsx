@@ -44,7 +44,7 @@ const ServiceCategoryDetail = ({ mainService }: { mainService: any }) => {
       <DDFloatButton
         icon="contact"
         color={serviceColor[category]}
-        className="fixed z-10 right-5 lg:right-16 bottom-5 lg:bottom-12"
+        className="fixed z-10 right-5 lg:right-16 bottom-5 lg:bottom-20"
         onClick={() => window && window.open("mailto:contact@dynamicdevs.com")}
       />
       <ServiceCoverpage
