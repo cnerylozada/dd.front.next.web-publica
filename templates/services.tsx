@@ -5,6 +5,7 @@ import React from "react";
 import {
   DDText,
   DDServiceDetail,
+  DDIcon,
 } from "@cnerylozada/dd.front.react.wp.library";
 import { getTextColor, languages } from "@/utils";
 
@@ -14,6 +15,7 @@ export const ServicesTemplate = ({
   description,
   services,
   color,
+  icon,
   lng,
 }: {
   name: string;
@@ -21,6 +23,7 @@ export const ServicesTemplate = ({
   description: string;
   services: any;
   color: string;
+  icon: string;
   lng: string;
 }) => {
   return (
@@ -54,9 +57,15 @@ export const ServicesTemplate = ({
           {description}
         </DDText>
       </div>
-      <div className="bg-bg2">
+      <div className="bg-bg2 relative overflow-hidden">
+        <DDIcon
+          name={icon}
+          size="bg"
+          className={`hidden lg:block absolute text-green -left-96 -bottom-16 
+          ${getTextColor[color]} opacity-5`}
+        />
         <div
-          className="py-21 lg:py-32 px-7 lg:px-0 mx-auto
+          className="relative py-21 lg:py-32 px-7 lg:px-0 mx-auto
           max-w-[1440px] lg:w-3/5 space-y-20 text-text"
         >
           {services.map((_: any, index: number) => (

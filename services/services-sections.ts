@@ -2,12 +2,22 @@ import axios from "axios";
 import { url } from "./config";
 
 const colors = ["green", "turquoise", "blue", "purple"];
+const icons = [
+  "accelerator-approach",
+  "build-and-integrate",
+  "make-it-live",
+  "dynamic-culture",
+];
 
 export const getServicesSections = () => {
   return axios
     .get(`${url}/service-categories`)
     .then(({ data }) =>
-      data.map((_: any, index: number) => ({ ..._, color: colors[index] }))
+      data.map((_: any, index: number) => ({
+        ..._,
+        color: colors[index],
+        icon: icons[index],
+      }))
     );
 };
 

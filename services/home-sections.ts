@@ -6,6 +6,10 @@ export const getHomeSections = () => {
   return axios.get(`${url}/home`).then(({ data }) => data);
 };
 
+export const getStaff = () => {
+  return axios.get(`${url}/co-workers`).then(({ data }) => data);
+};
+
 export const getClients = () => {
   return axios.get(`${url}/clients`).then(({ data }) => data);
 };
@@ -13,81 +17,6 @@ export const getClients = () => {
 export const sendMessage = (message: any) => {
   return axios.post(`${url}/contacts`, message);
 };
-
-export const staff = [
-  {
-    id: 1,
-    name: "Jonathan González",
-    jobPosition: "Chief Executive Officer",
-    imageUrl:
-      "https://assets.dynamicdevs.io/web/home/01-jon.png",
-    link: "https://www.linkedin.com/in/jongon/",
-  },
-  {
-    id: 2,
-    name: "César Contreras",
-    jobPosition: "Chief Technology Officer",
-    imageUrl:
-      "https://assets.dynamicdevs.io/web/home/02-cesar.png",
-    link: "https://www.linkedin.com/in/c1sar/",
-  },
-  {
-    id: 3,
-    name: "Marlis Mejías",
-    jobPosition: "Chief Marketing Officer test",
-    imageUrl:
-      "https://assets.dynamicdevs.io/web/home/03-marlis.png",
-    link: "https://www.linkedin.com/in/marlismejias/",
-  },
-  {
-    id: 4,
-    name: "Rosario Zúñiga",
-    jobPosition: "Chief Operation Officer",
-    imageUrl:
-      "https://assets.dynamicdevs.io/web/home/04-ros.png",
-    link: "https://www.linkedin.com/in/rosario-zs/",
-  },
-  {
-    id: 9,
-    name: "Eric Contreras",
-    jobPosition: "Technical Lead",
-    imageUrl:
-      "https://assets.dynamicdevs.io/web/home/09-eric.png",
-    link: "https://www.linkedin.com/in/eric-contreras-bb46aa66/",
-  },
-  {
-    id: 5,
-    name: "Ami Ishisaka",
-    jobPosition: "Visual UI/UX Designer",
-    imageUrl:
-      "https://assets.dynamicdevs.io/web/home/05-ami.png",
-    link: "https://www.linkedin.com/in/ami-ishisaka/",
-  },
-  {
-    id: 6,
-    name: "Lucho Morales",
-    jobPosition: "Software Engineer",
-    imageUrl:
-      "https://assets.dynamicdevs.io/web/home/06-lucho.png",
-    link: "https://www.linkedin.com/in/lucho-morales-segobia-793577141/",
-  },
-  {
-    id: 7,
-    name: "Cristian Nery",
-    jobPosition: "Software Engineer",
-    imageUrl:
-      "https://assets.dynamicdevs.io/web/home/07-cris.png",
-    link: "https://www.linkedin.com/in/cristian-nery-027b70180/",
-  },
-  {
-    id: 8,
-    name: "Elmer León",
-    jobPosition: "Software Engineer",
-    imageUrl:
-      "https://assets.dynamicdevs.io/web/home/08-leo.png",
-    link: "https://www.linkedin.com/in/leobar37/",
-  },
-];
 
 export const serviceCategories = [
   {

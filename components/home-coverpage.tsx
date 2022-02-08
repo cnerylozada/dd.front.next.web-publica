@@ -22,7 +22,7 @@ const HomeCoverPage = ({ cover, lng }: { cover: any; lng: string }) => {
         quality={100}
       /> */}
       <img
-        src={`https://assets.dynamicdevs.io/web/banner-last-frame.png`}
+        src="https://assets.dynamicdevs.io/web/banner-last-frame.png"
         alt="service-banner"
         className="absolute top-0 left-0 w-full h-screen object-cover"
       />
@@ -35,9 +35,7 @@ const HomeCoverPage = ({ cover, lng }: { cover: any; lng: string }) => {
         style={{ filter: "brightness(.4)" }}
       >
         <source
-          src={
-            "https://dynamicdevscommon.blob.core.windows.net/web/home/banner.mp4"
-          }
+          src="https://assets.dynamicdevs.io/web/home/banner.mp4"
           type="video/mp4"
         />
       </video>

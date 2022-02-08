@@ -4,11 +4,18 @@ import {
   DDCardProfile,
   DDText,
 } from "@cnerylozada/dd.front.react.wp.library";
-import { staff } from "@/services";
 import Template from "./template";
 import { languages } from "@/utils";
 
-const HomeStaff = ({ people, lng }: { people: any; lng: string }) => {
+const HomeStaff = ({
+  people,
+  staff,
+  lng,
+}: {
+  people: any;
+  staff: any;
+  lng: string;
+}) => {
   return (
     <div className="bg-bg2">
       <Template className="text-text">
@@ -24,20 +31,21 @@ const HomeStaff = ({ people, lng }: { people: any; lng: string }) => {
             ? "Nos dedicamos al desarrollo de software centrado en habilitar procesos de innovación apoyados en la tecnología. Nos mueve crear soluciones de impacto real."
             : "We are dedicated to software development focused on enabling technology-supported innovation processes. We are moved to create solutions with real impact."}
         </DDText>
-        <section className="flex justify-center">
-          <div className="mb-20 flex justify-start flex-wrap">
-            {staff.map((_, index) => (
-              <DDCardProfile
-                key={index}
-                name={_.name}
-                imgUrl={_.imageUrl}
-                linkedinUrl={_.link}
-                position={_.jobPosition}
-                className="mb-12 mx-4 lg:mx-12"
-              />
-            ))}
-          </div>
-        </section>
+        <div
+          className="mx-auto mb-12 lg:mb-20 xl:w-[875px] 
+          grid gap-12 lg:gap-24 md:grid-cols-2 xl:grid-cols-3"
+        >
+          {staff.map((_: any, index: number) => (
+            <DDCardProfile
+              key={index}
+              name={_.name}
+              imgUrl={_.image.url}
+              linkedinUrl={_.social_networks.url}
+              position={_.role.name}
+              className=""
+            />
+          ))}
+        </div>
 
         <div>
           <DDText

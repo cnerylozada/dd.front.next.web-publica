@@ -52,16 +52,20 @@ const WrapperApp = ({ children }: { children: any }) => {
           property="og:description"
           content="Aplicaciones Móviles y Desktop, Blockchain, Inteligencia Artificial y Páginas Web. Creamos sistemas personalizados para tu negocio con un equipo multidisciplinario y metodología ágil."
         />
+        <meta
+          property="og:image"
+          content="https://assets.dynamicdevs.io/web/logo.png"
+        />
 
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Script
         type="module"
-        src="https://sources-dynamic-devs-icons-l7xcmltqs-dd-icons.vercel.app/build/dynamic-devs-icons.esm.js"
+        src="https://dynamic-devs-icons-h4awtcui1-cnerylozada.vercel.app/build/dynamic-devs-icons.esm.js"
       />
       <Script
         noModule={true}
-        src="https://sources-dynamic-devs-icons-l7xcmltqs-dd-icons.vercel.app/build/dynamic-devs-icons.js"
+        src="https://dynamic-devs-icons-h4awtcui1-cnerylozada.vercel.app/build/dynamic-devs-icons.js"
       />
       <DDTheme isDarkMode={store.ddIsDarkMode}>
         <Navbar />
