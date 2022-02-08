@@ -66,7 +66,7 @@ export const getBgColor = {
 
 export const languages = { spanish: "es", english: "en" };
 export const navLanguages = [
-  { id: 1, label: "sp", value: languages.spanish },
+  { id: 1, label: "es", value: languages.spanish },
   { id: 2, label: "en", value: languages.english },
 ];
 

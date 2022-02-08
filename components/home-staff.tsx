@@ -24,18 +24,21 @@ const HomeStaff = ({ people, lng }: { people: any; lng: string }) => {
             ? "Nos dedicamos al desarrollo de software centrado en habilitar procesos de innovación apoyados en la tecnología. Nos mueve crear soluciones de impacto real."
             : "We are dedicated to software development focused on enabling technology-supported innovation processes. We are moved to create solutions with real impact."}
         </DDText>
-        <div className="lg:mb-20 lg:flex lg:justify-center lg:space-x-24">
-          {staff.map((_, index) => (
-            <DDCardProfile
-              key={index}
-              name={_.name}
-              imgUrl={_.imageUrl}
-              linkedinUrl={_.link}
-              position={_.jobPosition}
-              className="mb-12 lg:m-0"
-            />
-          ))}
-        </div>
+        <section className="flex justify-center">
+          <div className="mb-20 flex justify-start flex-wrap">
+            {staff.map((_, index) => (
+              <DDCardProfile
+                key={index}
+                name={_.name}
+                imgUrl={_.imageUrl}
+                linkedinUrl={_.link}
+                position={_.jobPosition}
+                className="mb-12 mx-4 lg:mx-12"
+              />
+            ))}
+          </div>
+        </section>
+
         <div>
           <DDText
             size="sectionHeadline"
