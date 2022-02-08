@@ -5,9 +5,11 @@ import { DDText } from "@cnerylozada/dd.front.react.wp.library";
 export const ServiceCoverpage = ({
   title,
   description,
+  color,
 }: {
   title: string;
   description: string;
+  color: string;
 }) => {
   return (
     <div
@@ -16,7 +18,7 @@ export const ServiceCoverpage = ({
     >
       <Image
         alt="home-banner"
-        src="https://dynamicdevscommon.blob.core.windows.net/web/banner-last-frame.png"
+        src={`https://dynamicdevscommon.blob.core.windows.net/web/bg-${color}.png`}
         layout="fill"
         objectFit="cover"
         quality={100}

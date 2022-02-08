@@ -5,7 +5,7 @@ import {
   DDText,
   DDServiceDetail,
 } from "@cnerylozada/dd.front.react.wp.library";
-import { getTextColor } from "@/utils";
+import { getTextColor, languages } from "@/utils";
 
 export const ServicesTemplate = ({
   name,
@@ -31,7 +31,7 @@ export const ServicesTemplate = ({
       >
         <Image
           alt="service-banner"
-          src="https://dynamicdevscommon.blob.core.windows.net/web/banner-last-frame.png"
+          src={`https://dynamicdevscommon.blob.core.windows.net/web/bg-${color}.png`}
           layout="fill"
           objectFit="cover"
           quality={100}
@@ -57,6 +57,11 @@ export const ServicesTemplate = ({
               key={index}
               title={_.name}
               description={_[`description_${lng}`]}
+              buttonLabel={
+                lng === languages.spanish
+                  ? "Quiero saber más"
+                  : "I want to know more"
+              }
               color={color}
               align={(index + 1) % 2 ? "left" : "right"}
               className={(index + 1) % 2 ? "" : "ml-auto"}
