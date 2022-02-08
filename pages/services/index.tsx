@@ -23,6 +23,7 @@ const Services = ({ sections }: { sections: any }) => {
           description={_[`description_${store.ddLanguage}`]}
           services={_.services}
           color={_.color}
+          icon={_.icon}
           lng={store.ddLanguage}
         />
       ))}
