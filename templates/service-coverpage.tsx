@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import Image from "next/image";
 import { DDText } from "@cnerylozada/dd.front.react.wp.library";
 
 export const ServiceCoverpage = ({

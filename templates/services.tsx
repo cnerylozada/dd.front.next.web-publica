@@ -34,6 +34,7 @@ export const ServicesTemplate = ({
           alt="service-banner"
           src={`https://dynamicdevscommon.blob.core.windows.net/web/bg-${color}.png`}
           layout="fill"
+          loader={() => 'https://dynamicdevscommon.blob.core.windows.net/web/banner-last-frame.png'}
           objectFit="cover"
           quality={100}
         /> */}
