@@ -11,8 +11,8 @@ import {
   setTheme,
   setLanguage,
 } from "../store";
-import { Footer, Navbar } from "../components";
-import { languages } from "../utils";
+import { Footer, Navbar } from "@/components";
+import { languages } from "@/utils";
 import "../styles/globals.css";
 
 const WrapperApp = ({ children }: { children: any }) => {

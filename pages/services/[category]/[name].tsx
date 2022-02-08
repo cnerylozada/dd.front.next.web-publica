@@ -10,7 +10,7 @@ import {
   ServiceStack,
   ContactForm,
 } from "@/templates";
-import { getColorByService } from "@/utils";
+import { getColorByService, getBorderByService } from "@/utils";
 
 export const getStaticPaths = async () => {
   return {
@@ -30,7 +30,7 @@ const ServiceCategoryDetail = ({ mainService }: { mainService: any }) => {
   let { service, service_section } = mainService;
   const { query } = useRouter();
   const category: any = query.category;
-  const floatButtonColor = {
+  const serviceColor = {
     "accelerator-approach": "green",
     "build-and-integrate": "turquoise",
     "make-it-live": "blue",
@@ -43,16 +43,18 @@ const ServiceCategoryDetail = ({ mainService }: { mainService: any }) => {
     <>
       <DDFloatButton
         icon="contact"
-        color={floatButtonColor[category]}
-        className="fixed z-10 right-5 lg:right-16 bottom-5 lg:bottom-12"
+        color={serviceColor[category]}
+        className="fixed z-10 right-5 lg:right-16 bottom-5 lg:bottom-20"
         onClick={() => window && window.open("mailto:contact@dynamicdevs.com")}
       />
       <ServiceCoverpage
         title={service[`title_${store.ddLanguage}`]}
         description={service[`description_${store.ddLanguage}`]}
+        color={serviceColor[category]}
       />
       {service_section.map((_: any, index: number) => {
         const bgStyle = (index + 1) % 2 === 0 ? "bg-bg1" : "bg-bg2";
+        const borderStyles = getBorderByService[category];
         const classess = `${bgStyle} ${getColorByService[category]}`;
         let component;
 
@@ -94,6 +96,7 @@ const ServiceCategoryDetail = ({ mainService }: { mainService: any }) => {
               data={_}
               lng={store.ddLanguage}
               className={classess}
+              borderStyles={borderStyles}
             />
           );
         if (_.route_type === "stack")

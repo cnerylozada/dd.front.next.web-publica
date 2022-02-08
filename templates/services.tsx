@@ -1,10 +1,12 @@
+/* eslint-disable @next/next/no-img-element */
+import Image from "next/image";
 import router from "next/router";
 import React from "react";
 import {
   DDText,
   DDServiceDetail,
 } from "@cnerylozada/dd.front.react.wp.library";
-import { getTextColor } from "@/utils";
+import { getTextColor, languages } from "@/utils";
 
 export const ServicesTemplate = ({
   name,
@@ -30,12 +32,17 @@ export const ServicesTemplate = ({
       >
         {/* <Image
           alt="service-banner"
-          src="https://dynamicdevscommon.blob.core.windows.net/web/banner-last-frame.png"
+          src={`https://dynamicdevscommon.blob.core.windows.net/web/bg-${color}.png`}
           layout="fill"
           loader={() => 'https://dynamicdevscommon.blob.core.windows.net/web/banner-last-frame.png'}
           objectFit="cover"
           quality={100}
         /> */}
+        <img
+          src={`https://assets.dynamicdevs.io/web/bg-${color}.png`}
+          alt="service-banner"
+          className="absolute top-0 left-0 w-full h-100 lg:h-112 object-cover"
+        />
         <DDText
           size="headline"
           weight="bold"
@@ -47,13 +54,21 @@ export const ServicesTemplate = ({
           {description}
         </DDText>
       </div>
-      <div className="px-7 flex justify-center bg-bg2">
-        <div className="mt-22 lg:mt-32 mb-24 lg:mb-40 space-y-20 text-text lg:w-8/12">
+      <div className="bg-bg2">
+        <div
+          className="py-21 lg:py-32 px-7 lg:px-0 mx-auto
+          max-w-[1440px] lg:w-3/5 space-y-20 text-text"
+        >
           {services.map((_: any, index: number) => (
             <DDServiceDetail
               key={index}
               title={_.name}
               description={_[`description_${lng}`]}
+              buttonLabel={
+                lng === languages.spanish
+                  ? "Quiero saber más"
+                  : "I want to know more"
+              }
               color={color}
               align={(index + 1) % 2 ? "left" : "right"}
               className={(index + 1) % 2 ? "" : "ml-auto"}

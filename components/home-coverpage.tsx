@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import {
   DDButton,
@@ -20,6 +21,12 @@ const HomeCoverPage = ({ cover, lng }: { cover: any; lng: string }) => {
         objectFit="cover"
         quality={100}
       /> */}
+      <img
+        src={`https://assets.dynamicdevs.io/web/banner-last-frame.png`}
+        alt="service-banner"
+        className="absolute top-0 left-0 w-full h-screen object-cover"
+      />
+
       <video
         autoPlay
         muted

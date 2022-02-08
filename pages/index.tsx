@@ -30,7 +30,7 @@ const Home = ({
     <>
       <DDFloatButton
         icon="contact"
-        className="fixed z-10 right-5 lg:right-16 bottom-5 lg:bottom-12"
+        className="fixed z-10 right-5 lg:right-16 bottom-5 lg:bottom-20"
         onClick={() => window && window.open("mailto:contact@dynamicdevs.com")}
       />
       <HomeCoverPage cover={sections.cover} lng={store.ddLanguage} />
@@ -55,7 +55,11 @@ const Home = ({
       <div className="text-turquoise ml-auto bg-green"></div>
       <div className="text-blue bg-blue"></div>
       <div className="text-purple bg-purple"></div>
-      <div className="text-purple bg-turquoise"></div> */}
+      <div className="text-purple bg-turquoise"></div>
+      <div className="border-green"></div>
+      <div className="border-turquoise"></div>
+      <div className="border-blue"></div>
+      <div className="border-purple"></div> */}
     </>
   );
 };
