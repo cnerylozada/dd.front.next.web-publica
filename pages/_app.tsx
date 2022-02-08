@@ -52,6 +52,10 @@ const WrapperApp = ({ children }: { children: any }) => {
           property="og:description"
           content="Aplicaciones Móviles y Desktop, Blockchain, Inteligencia Artificial y Páginas Web. Creamos sistemas personalizados para tu negocio con un equipo multidisciplinario y metodología ágil."
         />
+        <meta
+          property="og:image"
+          content="https://assets.dynamicdevs.io/web/logo.png"
+        />
 
         <link rel="icon" href="/favicon.ico" />
       </Head>
