@@ -17,3 +17,5 @@ export {
   Navbar,
   ServiceCoverPage,
 };
+
+export * from "./closeTab";

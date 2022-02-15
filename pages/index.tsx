@@ -1,13 +1,19 @@
+import dynamic from "next/dynamic";
 import { DDFloatButton } from "@cnerylozada/dd.front.react.wp.library";
 import { getHomeSections, getClients, getStaff } from "@/services";
 import { useStore } from "../store";
 import { ContactForm } from "@/templates";
 import {
+  CloseTab,
   HomeCoverPage,
   HomeCustomers,
   HomeServices,
   HomeStaff,
 } from "@/components";
+
+const Markdown = dynamic(() => import("../components/markdown"), {
+  ssr: false,
+});
 
 export async function getStaticProps() {
   const sections = await getHomeSections();
@@ -28,6 +34,8 @@ const Home = ({
   listClients: any;
 }) => {
   const [store] = useStore();
+  const dbString =
+    "<h3>Artist (Argentina). A phantasmagorical entity that transcends dimensions, connecting online and offline life.</h3> <hr> <br> <p>I wake up and see what I want to see,</p> <p>just what I want to see.</p> <br> <p>My new profile picture is him uglier than ever</p> <br> <p>My cell phone is a crystal ball.</p> <p>My notifications come and go.</p> <p>I open them</p>";
 
   return (
     <>
@@ -37,6 +45,7 @@ const Home = ({
         onClick={() => window && window.open("mailto:contact@dynamicdevs.com")}
       />
       <HomeCoverPage cover={sections.cover} lng={store.ddLanguage} />
+      {/* <Markdown htmlString={dbString} htmlTag="div" /> */}
       <HomeServices
         mainSection={sections.services_section}
         lng={store.ddLanguage}

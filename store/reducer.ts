@@ -5,7 +5,7 @@ const SET_THEME = "SET_THEME";
 
 export const initialState = {
   ddLanguage: languages.spanish,
-  ddIsDarkMode: false,
+  ddIsDarkMode: true, //dark by default
 };
 
 export const setLanguage = (payload: any) => ({

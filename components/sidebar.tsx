@@ -16,7 +16,7 @@ const Sidebar = ({ setIsSidebarShown }: { setIsSidebarShown: any }) => {
       className="z-20 fixed top-0 left-0 w-full h-full
       px-9 flex flex-col justify-center bg-bg1"
     >
-      <DDToggle
+      {/* <DDToggle
         className="block mb-10"
         checked={store.ddIsDarkMode}
         onClick={() => {
@@ -24,7 +24,7 @@ const Sidebar = ({ setIsSidebarShown }: { setIsSidebarShown: any }) => {
           localStorage.setItem("dd-theme", newTheme ? "dark" : "light");
           dispatch(setTheme(newTheme));
         }}
-      />
+      /> */}
       <div className="space-y-10 mb-10">
         {navLinks.map((_, index) => (
           <Link key={index} href={`/${_.path}`}>

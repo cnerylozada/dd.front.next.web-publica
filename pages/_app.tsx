@@ -2,6 +2,7 @@ import type { AppProps } from "next/app";
 import Script from "next/script";
 import Head from "next/head";
 import { useEffect } from "react";
+import { hotjar } from "react-hotjar";
 import { DDTheme } from "@cnerylozada/dd.front.react.wp.library";
 import {
   StoreProvider,
@@ -76,12 +77,18 @@ const WrapperApp = ({ children }: { children: any }) => {
   );
 };
 
-const MyApp = ({ Component, pageProps }: AppProps) => (
-  <StoreProvider initialState={initialState} reducer={reducer}>
-    <WrapperApp>
-      <Component {...pageProps} />
-    </WrapperApp>
-  </StoreProvider>
-);
+const MyApp = ({ Component, pageProps }: AppProps) => {
+  useEffect(() => {
+    hotjar.initialize(2832775, 6);
+  }, []);
+
+  return (
+    <StoreProvider initialState={initialState} reducer={reducer}>
+      <WrapperApp>
+        <Component {...pageProps} />
+      </WrapperApp>
+    </StoreProvider>
+  );
+};
 
 export default MyApp;
