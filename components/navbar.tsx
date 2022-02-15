@@ -36,14 +36,14 @@ const Navbar = () => {
           onClick={() => router.push("/")}
         />
         <div className="hidden lg:flex items-center space-x-10 text-text">
-          <DDToggle
+          {/* <DDToggle
             checked={store.ddIsDarkMode}
             onClick={() => {
               const newTheme: boolean = !store.ddIsDarkMode;
               localStorage.setItem("dd-theme", newTheme ? "dark" : "light");
               dispatch(setTheme(newTheme));
             }}
-          />
+          /> */}
           {navLinks.map((_, index) => (
             <Link key={index} href={`/${_.path}`}>
               <a className="block">

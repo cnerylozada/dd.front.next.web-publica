@@ -4,13 +4,14 @@ import { getHomeSections, getClients, getStaff } from "@/services";
 import { useStore } from "../store";
 import { ContactForm } from "@/templates";
 import {
+  CloseTab,
   HomeCoverPage,
   HomeCustomers,
   HomeServices,
   HomeStaff,
 } from "@/components";
 
-const Markdown = dynamic(() => import("../components/Markdown"), {
+const Markdown = dynamic(() => import("../components/markdown"), {
   ssr: false,
 });
 
