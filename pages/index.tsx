@@ -11,9 +11,9 @@ import {
   HomeStaff,
 } from "@/components";
 
-const Markdown = dynamic(() => import("../components/markdown"), {
-  ssr: false,
-});
+// const Markdown = dynamic(() => import("../components/markdown"), {
+//   ssr: false,
+// });
 
 export async function getStaticProps() {
   const sections = await getHomeSections();
