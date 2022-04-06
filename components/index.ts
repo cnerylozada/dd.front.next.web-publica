@@ -1,3 +1,4 @@
+export * from "./home-blog";
 export * from "./home-coverpage";
 export * from "./home-services";
 export * from "./home-staff";

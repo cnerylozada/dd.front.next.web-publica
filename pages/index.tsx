@@ -7,6 +7,7 @@ import {
   HomeCustomers,
   HomeServices,
   HomeStaff,
+  HomeBlog,
 } from "@/components";
 
 export async function getStaticProps() {
@@ -51,11 +52,12 @@ const Home = ({
         listClients={listClients}
         lng={store.ddLanguage}
       />
+      <HomeBlog />
       <div id="contactSection">
         <ContactForm
           mainSection={sections.contact_section}
           lng={store.ddLanguage}
-          className="bg-bg2 text-primary"
+          className="bg-bg1 text-primary"
         />
       </div>
       {/* <div className="text-green h-100 lg:h-112 mt-22 lg:mt-32 mb-24 lg:mb-40 space-y-20 lg:w-8/12"></div>

@@ -9,7 +9,7 @@ import {
   DDIcon,
 } from "@cnerylozada/dd.front.react.wp.library";
 import { SelectLanguage } from "./select-language";
-import Sidebar from "./sidebar";
+import { Sidebar } from "./sidebar";
 import { navLinks } from "@/utils";
 
 export const Navbar = () => {
