@@ -7,10 +7,10 @@ import {
   DDText,
 } from "@cnerylozada/dd.front.react.wp.library";
 import { serviceCategories } from "@/services";
-import Template from "./template";
+import { Template } from "./template";
 import { getTextColor } from "@/utils";
 
-const HomeServices = ({
+export const HomeServices = ({
   mainSection,
   lng,
 }: {
@@ -81,5 +81,3 @@ const HomeServices = ({
     </div>
   );
 };
-
-export default HomeServices;

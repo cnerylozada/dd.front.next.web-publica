@@ -1,7 +1,7 @@
 import React from "react";
 import { DDSvg, DDText } from "@cnerylozada/dd.front.react.wp.library";
 
-const HomeCustomers = ({
+export const HomeCustomers = ({
   description,
   listClients,
   lng,
@@ -40,5 +40,3 @@ const HomeCustomers = ({
     </div>
   );
 };
-
-export default HomeCustomers;

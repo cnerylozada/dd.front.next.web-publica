@@ -8,7 +8,7 @@ import {
 import { useStore, setLanguage, setTheme } from "../store";
 import { navLinks, navLanguages } from "@/utils";
 
-const Sidebar = ({ setIsSidebarShown }: { setIsSidebarShown: any }) => {
+export const Sidebar = ({ setIsSidebarShown }: { setIsSidebarShown: any }) => {
   const [store, dispatch] = useStore();
 
   return (
@@ -65,5 +65,3 @@ const Sidebar = ({ setIsSidebarShown }: { setIsSidebarShown: any }) => {
     </div>
   );
 };
-
-export default Sidebar;

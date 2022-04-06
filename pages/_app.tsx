@@ -62,11 +62,11 @@ const WrapperApp = ({ children }: { children: any }) => {
       </Head>
       <Script
         type="module"
-        src="https://dynamic-devs-icons-h4awtcui1-cnerylozada.vercel.app/build/dynamic-devs-icons.esm.js"
+        src="https://sources-dynamic-devs-icons-six.vercel.app/build/dynamic-devs-icons.esm.js"
       />
       <Script
         noModule={true}
-        src="https://dynamic-devs-icons-h4awtcui1-cnerylozada.vercel.app/build/dynamic-devs-icons.js"
+        src="https://sources-dynamic-devs-icons-six.vercel.app/build/dynamic-devs-icons.js"
       />
       <DDTheme isDarkMode={store.ddIsDarkMode}>
         <Navbar />
