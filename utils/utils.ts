@@ -83,6 +83,12 @@ export const navLinks = [
     label_en: "services",
     path: "services",
   },
+  {
+    id: 3,
+    label_es: "blog",
+    label_en: "blog",
+    path: "blog",
+  },
 ];
 
 export const contactForm = {

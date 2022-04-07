@@ -1,21 +1,10 @@
-import HomeCoverPage from "./home-coverpage";
-import HomeServices from "./home-services";
-import HomeStaff from "./home-staff";
-import HomeCustomers from "./home-customers";
+export * from "./home-blog";
+export * from "./home-coverpage";
+export * from "./home-services";
+export * from "./home-staff";
+export * from "./home-customers";
 
-import ServiceCoverPage from "./services-coverpage";
+export * from "./services-coverpage";
 
-import Navbar from "./navbar";
-import Footer from "./footer";
-
-export {
-  Footer,
-  HomeCoverPage,
-  HomeCustomers,
-  HomeServices,
-  HomeStaff,
-  Navbar,
-  ServiceCoverPage,
-};
-
-export * from "./closeTab";
+export * from "./navbar";
+export * from "./footer";

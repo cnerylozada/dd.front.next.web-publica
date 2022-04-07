@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const Template = ({
+export const Template = ({
   children,
   id,
   className,
@@ -19,5 +19,3 @@ const Template = ({
     </div>
   );
 };
-
-export default Template;

@@ -7,7 +7,7 @@ import {
 } from "@cnerylozada/dd.front.react.wp.library";
 import { languages } from "@/utils";
 
-const HomeCoverPage = ({ cover, lng }: { cover: any; lng: string }) => {
+export const HomeCoverPage = ({ cover, lng }: { cover: any; lng: string }) => {
   return (
     <div
       className="relative px-5 h-screen flex flex-col justify-center items-center 
@@ -79,5 +79,3 @@ const HomeCoverPage = ({ cover, lng }: { cover: any; lng: string }) => {
     </div>
   );
 };
-
-export default HomeCoverPage;

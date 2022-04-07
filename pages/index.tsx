@@ -1,26 +1,22 @@
-import dynamic from "next/dynamic";
 import { DDFloatButton } from "@cnerylozada/dd.front.react.wp.library";
-import { getHomeSections, getClients, getStaff } from "@/services";
+import { getHomeSections, getClients, getStaff, getBlogs } from "@/services";
 import { useStore } from "../store";
 import { ContactForm } from "@/templates";
 import {
-  CloseTab,
   HomeCoverPage,
   HomeCustomers,
   HomeServices,
   HomeStaff,
+  HomeBlog,
 } from "@/components";
-
-// const Markdown = dynamic(() => import("../components/markdown"), {
-//   ssr: false,
-// });
 
 export async function getStaticProps() {
   const sections = await getHomeSections();
   const staff = await getStaff();
   const listClients = await getClients();
+  const blogs = await getBlogs();
   return {
-    props: { sections, staff, listClients },
+    props: { sections, staff, listClients, blogs },
   };
 }
 
@@ -28,14 +24,14 @@ const Home = ({
   sections,
   staff,
   listClients,
+  blogs,
 }: {
   sections: any;
   staff: any;
   listClients: any;
+  blogs: any;
 }) => {
   const [store] = useStore();
-  const dbString =
-    "<h3>Artist (Argentina). A phantasmagorical entity that transcends dimensions, connecting online and offline life.</h3> <hr> <br> <p>I wake up and see what I want to see,</p> <p>just what I want to see.</p> <br> <p>My new profile picture is him uglier than ever</p> <br> <p>My cell phone is a crystal ball.</p> <p>My notifications come and go.</p> <p>I open them</p>";
 
   return (
     <>
@@ -45,7 +41,6 @@ const Home = ({
         onClick={() => window && window.open("mailto:contact@dynamicdevs.com")}
       />
       <HomeCoverPage cover={sections.cover} lng={store.ddLanguage} />
-      {/* <Markdown htmlString={dbString} htmlTag="div" /> */}
       <HomeServices
         mainSection={sections.services_section}
         lng={store.ddLanguage}
@@ -60,11 +55,12 @@ const Home = ({
         listClients={listClients}
         lng={store.ddLanguage}
       />
+      <HomeBlog blogs={blogs} />
       <div id="contactSection">
         <ContactForm
           mainSection={sections.contact_section}
           lng={store.ddLanguage}
-          className="bg-bg2 text-primary"
+          className="bg-bg1 text-primary"
         />
       </div>
       {/* <div className="text-green h-100 lg:h-112 mt-22 lg:mt-32 mb-24 lg:mb-40 space-y-20 lg:w-8/12"></div>

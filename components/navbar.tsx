@@ -9,10 +9,10 @@ import {
   DDIcon,
 } from "@cnerylozada/dd.front.react.wp.library";
 import { SelectLanguage } from "./select-language";
-import Sidebar from "./sidebar";
+import { Sidebar } from "./sidebar";
 import { navLinks } from "@/utils";
 
-const Navbar = () => {
+export const Navbar = () => {
   const router = useRouter();
   const [store, dispatch] = useStore();
   const { query } = useRouter();
@@ -63,5 +63,3 @@ const Navbar = () => {
     </div>
   );
 };
-
-export default Navbar;

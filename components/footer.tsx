@@ -2,7 +2,7 @@ import React from "react";
 import { DDSvg, DDText } from "@cnerylozada/dd.front.react.wp.library";
 import { socialNetworks } from "../utils";
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <footer className="bg-bg2">
       <div
@@ -29,5 +29,3 @@ const Footer = () => {
     </footer>
   );
 };
-
-export default Footer;

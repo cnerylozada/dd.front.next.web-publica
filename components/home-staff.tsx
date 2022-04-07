@@ -4,10 +4,10 @@ import {
   DDCardProfile,
   DDText,
 } from "@cnerylozada/dd.front.react.wp.library";
-import Template from "./template";
+import { Template } from "./template";
 import { languages } from "@/utils";
 
-const HomeStaff = ({
+export const HomeStaff = ({
   people,
   staff,
   lng,
@@ -83,5 +83,3 @@ const HomeStaff = ({
     </div>
   );
 };
-
-export default HomeStaff;
