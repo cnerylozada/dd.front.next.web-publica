@@ -1,5 +1,5 @@
 import { DDFloatButton } from "@cnerylozada/dd.front.react.wp.library";
-import { getHomeSections, getClients, getStaff } from "@/services";
+import { getHomeSections, getClients, getStaff, getBlogs } from "@/services";
 import { useStore } from "../store";
 import { ContactForm } from "@/templates";
 import {
@@ -14,8 +14,9 @@ export async function getStaticProps() {
   const sections = await getHomeSections();
   const staff = await getStaff();
   const listClients = await getClients();
+  const blogs = await getBlogs();
   return {
-    props: { sections, staff, listClients },
+    props: { sections, staff, listClients, blogs },
   };
 }
 
@@ -23,10 +24,12 @@ const Home = ({
   sections,
   staff,
   listClients,
+  blogs,
 }: {
   sections: any;
   staff: any;
   listClients: any;
+  blogs: any;
 }) => {
   const [store] = useStore();
 
@@ -52,7 +55,7 @@ const Home = ({
         listClients={listClients}
         lng={store.ddLanguage}
       />
-      <HomeBlog />
+      <HomeBlog blogs={blogs} />
       <div id="contactSection">
         <ContactForm
           mainSection={sections.contact_section}

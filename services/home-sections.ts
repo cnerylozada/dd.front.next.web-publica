@@ -14,6 +14,10 @@ export const getClients = () => {
   return axios.get(`${url}/clients`).then(({ data }) => data);
 };
 
+export const getBlogs = () => {
+  return axios.get(`${url}/blogs`).then(({ data }) => data);
+};
+
 export const sendMessage = (message: any) => {
   return axios.post(`${url}/contacts`, message);
 };

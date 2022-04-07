@@ -1,9 +1,13 @@
 import React from "react";
 import { useRouter } from "next/router";
-import { DDButton, DDText } from "@cnerylozada/dd.front.react.wp.library";
+import {
+  DDButton,
+  DDText,
+  DDArticlePreview,
+} from "@cnerylozada/dd.front.react.wp.library";
 import { Template } from "./template";
 
-export const HomeBlog = ({}) => {
+export const HomeBlog = ({ blogs }: { blogs: any }) => {
   const router = useRouter();
   return (
     <div className="bg-bg2">
@@ -31,11 +35,17 @@ export const HomeBlog = ({}) => {
             Ir al Blog
           </DDButton>
         </div>
-        <div
-          className="mx-auto mb-12 lg:mb-20 xl:w-[875px] 
-          grid gap-12 lg:gap-24 md:grid-cols-2 xl:grid-cols-3"
-        >
-          qweqwe
+        <div className="space-y-12 lg:space-y-0 lg:grid grid-cols-3 gap-5">
+          {blogs.map((_: any, index: number) => (
+            <DDArticlePreview
+              key={index}
+              title={_.title}
+              type={_.Type}
+              author={`${_.author.firstname} ${_.author.lastname}`}
+              imgSrc={_.image.url}
+              onClick={() => console.log("qweqe")}
+            />
+          ))}
         </div>
       </Template>
     </div>
