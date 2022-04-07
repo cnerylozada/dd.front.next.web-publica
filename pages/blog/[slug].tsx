@@ -3,6 +3,7 @@ import {
   DDShareArticle,
   DDAuthor,
 } from "@cnerylozada/dd.front.react.wp.library";
+import ReactMarkdown from "react-markdown";
 import { getBlogBySlug } from "@/services";
 
 export const getStaticPaths = async () => {
@@ -100,7 +101,9 @@ const Article = ({ article }: { article: any }) => {
             />
           </div>
 
-          <div>qweqweqwe</div>
+          <div>
+            <ReactMarkdown>{article.content}</ReactMarkdown>
+          </div>
 
           <div className="mt-7 pt-7 border-t border-gray2">
             <DDText size="small" caps className="mb-4">
