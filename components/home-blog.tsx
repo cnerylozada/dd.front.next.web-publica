@@ -7,7 +7,7 @@ import {
 } from "@cnerylozada/dd.front.react.wp.library";
 import { Template } from "./template";
 
-export const HomeBlog = ({ blogs }: { blogs: any }) => {
+export const HomeBlog = ({ blogs, lng }: { blogs: any; lng: string }) => {
   const router = useRouter();
   return (
     <div className="bg-bg2">

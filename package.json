@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@cnerylozada/dd.front.react.wp.library": "^1.2.0",
+    "@cnerylozada/dd.front.react.wp.library": "^1.2.1",
     "@types/react-lottie": "^1.2.6",
     "axios": "^0.24.0",
     "dynamicdevs": "^1.0.2",
