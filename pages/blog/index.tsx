@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import { useRouter } from "next/router";
 import { DDText, DDArticle } from "@cnerylozada/dd.front.react.wp.library";
 import { useStore } from "../../store";
 import { getBlogs } from "@/services";
@@ -12,6 +13,7 @@ export async function getStaticProps() {
 
 const Blog = ({ blogs }: { blogs: any }) => {
   const [store] = useStore();
+  const router = useRouter();
   return (
     <div className="pt-[50px] flex flex-col min-h-screen">
       <div
@@ -45,7 +47,7 @@ const Blog = ({ blogs }: { blogs: any }) => {
                 type={_.Type}
                 imgSrc={_.image.url}
                 content={_.content}
-                onClick={() => console.log("qweqe")}
+                onClick={() => router.push(`/blog/${_.slug}`)}
               />
             ))}
           </div>

@@ -43,7 +43,7 @@ export const HomeBlog = ({ blogs, lng }: { blogs: any; lng: string }) => {
               type={_.Type}
               author={`${_.author.firstname} ${_.author.lastname}`}
               imgSrc={_.image.url}
-              onClick={() => console.log("qweqe")}
+              onClick={() => router.push(`/blog/${_.slug}`)}
             />
           ))}
         </div>
