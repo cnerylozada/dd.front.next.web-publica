@@ -41,7 +41,11 @@ const Blog = ({ blogs }: { blogs: any }) => {
             {blogs.map((_: any, index: number) => (
               <DDArticle
                 key={index}
-                date={_.updatedblogs_at}
+                date={new Date(_.updated_at).toLocaleDateString("es-ES", {
+                  day: "2-digit",
+                  month: "long",
+                  year: "numeric",
+                })}
                 author={`${_.author.firstname} ${_.author.lastname}`}
                 title={_.title}
                 type={_.Type}
