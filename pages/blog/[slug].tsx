@@ -2,6 +2,18 @@ import {
   DDText,
   DDShareArticle,
   DDAuthor,
+  ATag,
+  PTag,
+  StrongTag,
+  EmTag,
+  H2Tag,
+  H3Tag,
+  H4Tag,
+  H5Tag,
+  H6Tag,
+  UlTag,
+  OlTag,
+  BlockquoteTag,
 } from "@cnerylozada/dd.front.react.wp.library";
 import ReactMarkdown from "react-markdown";
 import { getBlogBySlug } from "@/services";
@@ -102,7 +114,24 @@ const Article = ({ article }: { article: any }) => {
           </div>
 
           <div>
-            <ReactMarkdown>{article.content}</ReactMarkdown>
+            <ReactMarkdown
+              components={{
+                a: ATag,
+                blockquote: BlockquoteTag,
+                em: EmTag,
+                h2: H2Tag,
+                h3: H3Tag,
+                h4: H4Tag,
+                h5: H5Tag,
+                h6: H6Tag,
+                ol: OlTag,
+                p: PTag,
+                strong: StrongTag,
+                ul: UlTag,
+              }}
+            >
+              {article.content}
+            </ReactMarkdown>
           </div>
 
           <div className="mt-7 pt-7 border-t border-gray2">
