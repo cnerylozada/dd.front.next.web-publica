@@ -5,7 +5,13 @@ import {
   DDAuthor,
 } from "@cnerylozada/dd.front.react.wp.library";
 
-export const BlogSidebar = ({ author }: { author: any }) => {
+export const BlogSidebar = ({
+  author,
+  title,
+}: {
+  author: any;
+  title: string;
+}) => {
   return (
     <div
       className="hidden flex-shrink-0 md:block md:w-40 lg:w-74
@@ -37,20 +43,7 @@ export const BlogSidebar = ({ author }: { author: any }) => {
         </ol>
       </DDText>
 
-      <DDShareArticle
-        label="Compartir articulo"
-        networks={[
-          {
-            network: "facebook",
-            url: "https://www.facebook.com/rppnoticias",
-          },
-          { network: "twitter", url: "https://twitter.com/apple" },
-          {
-            network: "linkedin",
-            url: "https://www.linkedin.com/in/cristian-nery-027b70180/",
-          },
-        ]}
-      />
+      <DDShareArticle label="Compartir articulo" sourceTitle={title} />
     </div>
   );
 };

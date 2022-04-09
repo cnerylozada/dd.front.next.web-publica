@@ -42,7 +42,7 @@ const Article = ({ article }: { article: any }) => {
   return (
     <div className="bg-bg1 text-text min-h-screen">
       <div
-        className="mx-auto max-w-[1440px] mt-12 py-10 px-6 
+        className="relative mx-auto max-w-[1440px] mt-12 py-10 px-6 
         md:px-10 lg:pt-[60px] lg:pb-18 lg:pl-16 lg:pr-[200px]
         md:flex md:space-x-20 lg:space-x-32"
       >
