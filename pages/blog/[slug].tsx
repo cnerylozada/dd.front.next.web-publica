@@ -46,7 +46,7 @@ const Article = ({ article }: { article: any }) => {
         md:px-10 lg:pt-[60px] lg:pb-18 lg:pl-16 lg:pr-[200px]
         md:flex md:space-x-20 lg:space-x-32"
       >
-        <BlogSidebar author={article.author} />
+        <BlogSidebar author={article.author} title={article.title} />
 
         <div className="flex-grow lg:pb-10">
           <div className="mb-7 pb-7 border-b border-gray2">
