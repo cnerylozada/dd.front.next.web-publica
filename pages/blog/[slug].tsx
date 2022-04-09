@@ -14,6 +14,7 @@ import {
   UlTag,
   OlTag,
   BlockquoteTag,
+  ImgTag,
 } from "@cnerylozada/dd.front.react.wp.library";
 import ReactMarkdown from "react-markdown";
 import { getBlogBySlug } from "@/services";
@@ -91,7 +92,11 @@ const Article = ({ article }: { article: any }) => {
             <DDText size="small" caps className="mb-4">
               {article.Type}
             </DDText>
-            <DDText size="headline" weight="bold" className="mb-4">
+            <DDText
+              size="headline"
+              weight="bold"
+              className="mb-4 leading-[43px] lg:leading-[140%]"
+            >
               {article.title}
             </DDText>
 
@@ -128,6 +133,7 @@ const Article = ({ article }: { article: any }) => {
                 p: PTag,
                 strong: StrongTag,
                 ul: UlTag,
+                img: ImgTag,
               }}
             >
               {article.content}
