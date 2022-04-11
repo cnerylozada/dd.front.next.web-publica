@@ -18,6 +18,7 @@ import {
 import ReactMarkdown from "react-markdown";
 import { getBlogs, getBlogBySlug } from "@/services";
 import { BlogSidebar } from "@/components";
+import { useState } from "react";
 
 export const getStaticPaths = async () => {
   const blogs = await getBlogs();
@@ -39,6 +40,11 @@ export async function getStaticProps(context: any) {
 }
 
 const Article = ({ article }: { article: any }) => {
+  const summaryLinks = [
+    "1. Tecnologia vs. Humanidad: El Futuro choque entre hombre y maquina de Gerd Leonhard",
+    "2. Transhumanismo: La Búsqueda Tecnológica Del Mejoramiento Humano De Antonio Diéguez",
+  ];
+
   return (
     <div className="bg-bg1 text-text min-h-screen">
       <div
@@ -46,7 +52,11 @@ const Article = ({ article }: { article: any }) => {
         md:px-10 lg:pt-[60px] lg:pb-18 lg:pl-16 lg:pr-[200px]
         md:flex md:space-x-20 lg:space-x-32"
       >
-        <BlogSidebar author={article.author} title={article.title} />
+        <BlogSidebar
+          author={article.author}
+          title={article.title}
+          summaryLinks={summaryLinks}
+        />
 
         <div className="flex-grow lg:pb-10">
           <div className="mb-7 pb-7 border-b border-gray2">

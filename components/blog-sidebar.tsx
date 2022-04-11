@@ -8,9 +8,11 @@ import {
 export const BlogSidebar = ({
   author,
   title,
+  summaryLinks,
 }: {
   author: any;
   title: string;
+  summaryLinks: string[];
 }) => {
   return (
     <div
@@ -31,16 +33,21 @@ export const BlogSidebar = ({
         summary
       </DDText>
       <DDText>
-        <ol className="list-decimal list-inside md:space-y-5 lg:space-y-7">
-          <li className="cursor-pointer">
-            Tecnologia vs. Humanidad: El Futuro choque entre hombre y maquina de
-            Gerd Leonhard
-          </li>
-          <li className="cursor-pointer">
-            Transhumanismo: La Búsqueda Tecnológica Del Mejoramiento Humano De
-            Antonio Diéguez
-          </li>
-        </ol>
+        <div className="md:space-y-5 lg:space-y-7">
+          {summaryLinks.map((_: string, index: number) => (
+            <div
+              key={index}
+              className="cursor-pointer"
+              onClick={() => {
+                document
+                  .getElementById(_.split(" ").join("-"))
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              {_}
+            </div>
+          ))}
+        </div>
       </DDText>
 
       <DDShareArticle label="Compartir articulo" sourceTitle={title} />
