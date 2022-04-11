@@ -41,7 +41,7 @@ export const BlogSidebar = ({
               onClick={() => {
                 document
                   .getElementById(_.split(" ").join("-"))
-                  ?.scrollIntoView({ behavior: "smooth" });
+                  ?.scrollIntoView({ behavior: "smooth", block: "center" });
               }}
             >
               {_}
