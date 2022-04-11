@@ -42,7 +42,7 @@ const Blog = ({ blogs }: { blogs: any }) => {
               <DDArticle
                 key={index}
                 date={_.updated_at}
-                author={`${_.author.firstname} ${_.author.lastname}`}
+                author={_.co_worker.name}
                 title={_.title}
                 type={_.Type}
                 imgSrc={_.image.url}

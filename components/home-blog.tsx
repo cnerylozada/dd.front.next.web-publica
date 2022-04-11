@@ -41,7 +41,7 @@ export const HomeBlog = ({ blogs, lng }: { blogs: any; lng: string }) => {
               key={index}
               title={_.title}
               type={_.Type}
-              author={`${_.author.firstname} ${_.author.lastname}`}
+              author={_.co_worker.name}
               imgSrc={_.image.url}
               onClick={() => router.push(`/blog/${_.slug}`)}
             />

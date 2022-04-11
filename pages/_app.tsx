@@ -1,8 +1,8 @@
 import type { AppProps } from "next/app";
 import Script from "next/script";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { useEffect } from "react";
-import { hotjar } from "react-hotjar";
 import { DDTheme } from "@cnerylozada/dd.front.react.wp.library";
 import {
   StoreProvider,
@@ -18,6 +18,7 @@ import "../styles/globals.css";
 
 const WrapperApp = ({ children }: { children: any }) => {
   const [store, dispatch] = useStore();
+  const router = useRouter();
 
   useEffect(() => {
     const ddLng = localStorage.getItem("dd-lng");
@@ -71,24 +72,18 @@ const WrapperApp = ({ children }: { children: any }) => {
       <DDTheme isDarkMode={store.ddIsDarkMode}>
         <Navbar />
         {children}
-        <Footer />
+        {!router.pathname.includes("[slug]") && <Footer />}
       </DDTheme>
     </div>
   );
 };
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
-  useEffect(() => {
-    hotjar.initialize(2832775, 6);
-  }, []);
-
-  return (
-    <StoreProvider initialState={initialState} reducer={reducer}>
-      <WrapperApp>
-        <Component {...pageProps} />
-      </WrapperApp>
-    </StoreProvider>
-  );
-};
+const MyApp = ({ Component, pageProps }: AppProps) => (
+  <StoreProvider initialState={initialState} reducer={reducer}>
+    <WrapperApp>
+      <Component {...pageProps} />
+    </WrapperApp>
+  </StoreProvider>
+);
 
 export default MyApp;
