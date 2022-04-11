@@ -60,7 +60,8 @@ const Article = ({ article }: { article: any }) => {
       <div className="bg-bg1 text-text min-h-screen">
         <div
           className="relative mx-auto max-w-[1440px] mt-12 py-10 px-6 
-          md:px-10 lg:pt-[60px] lg:pb-18 lg:pl-16 lg:pr-[200px]"
+          md:px-10 lg:pt-[60px] lg:pb-18 lg:pl-16 lg:pr-[200px]
+          flex md:space-x-20 lg:space-x-32"
         >
           <BlogSidebar
             author={article.co_worker}
@@ -68,7 +69,7 @@ const Article = ({ article }: { article: any }) => {
             summaryLinks={summaryLinks}
           />
 
-          <div className="md:ml-60 lg:ml-[424px] lg:pb-10">
+          <div className="flex-grow-0 lg:pb-10">
             <div className="mb-7 pb-7 border-b border-gray2">
               <DDText size="xsmall" caps className="mb-4">
                 {article.Type}

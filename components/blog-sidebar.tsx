@@ -16,8 +16,9 @@ export const BlogSidebar = ({
 }) => {
   return (
     <div
-      className="hidden flex-shrink-0 fixed md:block md:w-40 lg:w-74
-      md:space-y-5 lg:space-y-7"
+      className="hidden flex-shrink-0 sticky md:h-fit 
+      md:top-[88px] lg:top-[108px] md:block 
+      md:w-40 lg:w-74 md:space-y-5 lg:space-y-7 "
     >
       <div className="md:pb-5 lg:pb-7 border-b-2 border-gray2">
         <DDAuthor

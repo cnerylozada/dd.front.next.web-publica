@@ -72,7 +72,7 @@ const WrapperApp = ({ children }: { children: any }) => {
       <DDTheme isDarkMode={store.ddIsDarkMode}>
         <Navbar />
         {children}
-        {!router.pathname.includes("[slug]") && <Footer />}
+        {true && <Footer />}
       </DDTheme>
     </div>
   );
