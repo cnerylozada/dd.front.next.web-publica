@@ -54,7 +54,7 @@ const Article = ({ article }: { article: any }) => {
       <Head>
         <meta
           name="keywords"
-          content={"palabra clave 1, palabra clave 2, palabra clave 3"}
+          content={article.tags.map((_) => _.name).join(", ")}
         />
       </Head>
       <div className="bg-bg1 text-text min-h-screen">
