@@ -23,9 +23,7 @@ export const BlogSidebar = ({
       <div className="md:pb-5 lg:pb-7 border-b-2 border-gray2">
         <DDAuthor
           author={author.name}
-          imgSrc={
-            "https://i.pinimg.com/280x280_RS/18/6e/0f/186e0f41249be115a4a161562d03f60d.jpg"
-          }
+          imgSrc={author.image.url}
           role={author.slug}
         />
       </div>

@@ -88,9 +88,7 @@ const Article = ({ article }: { article: any }) => {
 
               <DDAuthor
                 author={article.co_worker.name}
-                imgSrc={
-                  "https://i.pinimg.com/280x280_RS/18/6e/0f/186e0f41249be115a4a161562d03f60d.jpg"
-                }
+                imgSrc={article.co_worker.image.url}
                 role={article.co_worker.slug}
                 orientation="horizontal"
               />
