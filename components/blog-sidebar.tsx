@@ -36,7 +36,7 @@ export const BlogSidebar = ({
           {summaryLinks.map((_: string, index: number) => (
             <div
               key={index}
-              className="cursor-pointer"
+              className={`cursor-pointer hover:text-primary`}
               onClick={() => {
                 document
                   .getElementById(_.split(" ").join("-"))

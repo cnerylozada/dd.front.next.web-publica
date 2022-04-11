@@ -115,20 +115,6 @@ const Article = ({ article }: { article: any }) => {
                 {article.content}
               </ReactMarkdown>
             </div>
-
-            <div className="mt-7 pt-7 border-t border-gray2">
-              <DDText size="small" caps className="mb-4">
-                Artículo escrito por
-              </DDText>
-              <DDAuthor
-                author={article.co_worker.name}
-                imgSrc={
-                  "https://i.pinimg.com/280x280_RS/18/6e/0f/186e0f41249be115a4a161562d03f60d.jpg"
-                }
-                role={article.co_worker.slug}
-                orientation="horizontal"
-              />
-            </div>
           </div>
         </div>
       </div>
