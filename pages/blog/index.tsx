@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { DDText, DDArticle } from "@cnerylozada/dd.front.react.wp.library";
 import { useStore } from "../../store";
 import { getBlogs } from "@/services";
+import { typeArticle } from "@/utils";
 
 export async function getStaticProps() {
   const blogs = await getBlogs();
@@ -44,7 +45,7 @@ const Blog = ({ blogs }: { blogs: any }) => {
                 date={_.updated_at}
                 author={_.co_worker.name}
                 title={_.title}
-                type={_.Type}
+                type={typeArticle[`${_.Type}_${store.ddLanguage}`]}
                 imgSrc={_.image.url}
                 content={_.content}
                 onClick={() => router.push(`/blog/${_.slug}`)}

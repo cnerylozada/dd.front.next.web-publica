@@ -6,8 +6,17 @@ import {
   DDArticlePreview,
 } from "@cnerylozada/dd.front.react.wp.library";
 import { Template } from "./template";
+import { typeArticle } from "@/utils";
 
-export const HomeBlog = ({ blogs, lng }: { blogs: any; lng: string }) => {
+export const HomeBlog = ({
+  blogSection,
+  blogs,
+  lng,
+}: {
+  blogSection: any;
+  blogs: any;
+  lng: string;
+}) => {
   const router = useRouter();
   return (
     <div className="bg-bg2">
@@ -17,22 +26,20 @@ export const HomeBlog = ({ blogs, lng }: { blogs: any; lng: string }) => {
           weight="bold"
           className="mb-12 lg:mb-10 text-primary"
         >
-          Únete a la conversación
+          {blogSection[`title_${lng}`]}
         </DDText>
         <DDText size="subHeadline" weight="light" className="mb-12 lg:mb-10">
-          Desarrollo de software, historias de liderazgo y tendencias
-          tecnológicas. Descubre más con nosotros escuchando nuestros podcasts y
-          leyendo los artículos.
+          {blogSection[`description_${lng}`]}
         </DDText>
         <div className="mb-12 lg:mb-20 lg:flex items-center lg:space-x-4">
           <DDText size="subHeadline" weight="light" className="mb-12 lg:mb-0">
-            Revisa la lista completa de artículos en nuestro Blog
+            {blogSection[`excerpt_${lng}`]}
           </DDText>
           <DDButton
             onClick={() => router.push("/blog")}
             className="block mx-auto lg:m-0"
           >
-            Ir al Blog
+            {blogSection[`button_${lng}`]}
           </DDButton>
         </div>
         <div className="space-y-12 lg:space-y-0 lg:grid grid-cols-3 gap-5">
@@ -40,7 +47,7 @@ export const HomeBlog = ({ blogs, lng }: { blogs: any; lng: string }) => {
             <DDArticlePreview
               key={index}
               title={_.title}
-              type={_.Type}
+              type={typeArticle[`${_.Type}_${lng}`]}
               author={_.co_worker.name}
               imgSrc={_.image.url}
               onClick={() => router.push(`/blog/${_.slug}`)}

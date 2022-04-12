@@ -4,6 +4,8 @@ import {
   DDShareArticle,
   DDAuthor,
 } from "@cnerylozada/dd.front.react.wp.library";
+import { useStore } from "../store";
+import { languages } from "@/utils";
 
 export const BlogSidebar = ({
   author,
@@ -14,6 +16,8 @@ export const BlogSidebar = ({
   title: string;
   summaryLinks: string[];
 }) => {
+  const [store] = useStore();
+
   return (
     <div
       className="hidden flex-shrink-0 sticky md:h-fit 
@@ -29,7 +33,7 @@ export const BlogSidebar = ({
       </div>
 
       <DDText size="small" caps>
-        summary
+        {store.ddLanguage === languages.spanish ? "sumario" : "summary"}
       </DDText>
       <DDText>
         <div className="md:space-y-5 lg:space-y-7">
@@ -49,7 +53,14 @@ export const BlogSidebar = ({
         </div>
       </DDText>
 
-      <DDShareArticle label="Compartir articulo" sourceTitle={title} />
+      <DDShareArticle
+        label={
+          store.ddLanguage === languages.spanish
+            ? "compartir artículo"
+            : "share article"
+        }
+        sourceTitle={title}
+      />
     </div>
   );
 };

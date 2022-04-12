@@ -91,6 +91,15 @@ export const navLinks = [
   },
 ];
 
+export const typeArticle = {
+  article_es: "artículo",
+  article_en: "article",
+  video_es: "video",
+  video_en: "video",
+  podcast_es: "podcast",
+  podcast_en: "podcast",
+};
+
 export const contactForm = {
   nameAndLastname: {
     label_es: "Nombre y Apellido",

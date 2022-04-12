@@ -20,6 +20,8 @@ import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import { getBlogs, getBlogBySlug } from "@/services";
 import { BlogSidebar } from "@/components";
+import { useStore } from "../../store";
+import { typeArticle } from "@/utils";
 
 export const getStaticPaths = async () => {
   const blogs = await getBlogs();
@@ -40,6 +42,7 @@ export async function getStaticProps(context: any) {
 }
 
 const Article = ({ article }: { article: any }) => {
+  const [store] = useStore();
   const [summaryLinks, setSummaryLinks] = useState<any>([]);
 
   useEffect(() => {
@@ -72,7 +75,7 @@ const Article = ({ article }: { article: any }) => {
           <div className="flex-grow-0 lg:pb-10">
             <div className="mb-7 pb-7 border-b border-gray2">
               <DDText size="xsmall" caps className="mb-4">
-                {article.Type}
+                {typeArticle[`${article.Type}_${store.ddLanguage}`]}
               </DDText>
               <DDText size="headline" weight="bold" className="mb-4">
                 {article.title}

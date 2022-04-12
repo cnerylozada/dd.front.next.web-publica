@@ -55,7 +55,11 @@ const Home = ({
         listClients={listClients}
         lng={store.ddLanguage}
       />
-      <HomeBlog blogs={blogs} lng={store.ddLanguage} />
+      <HomeBlog
+        blogSection={sections.Blog_section}
+        blogs={blogs}
+        lng={store.ddLanguage}
+      />
       <div id="contactSection">
         <ContactForm
           mainSection={sections.contact_section}
