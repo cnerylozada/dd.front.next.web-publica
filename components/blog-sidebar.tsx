@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   DDText,
   DDShareArticle,
@@ -17,6 +17,7 @@ export const BlogSidebar = ({
   summaryLinks: string[];
 }) => {
   const [store] = useStore();
+  const [currentIndex, setCurrentIndex] = useState<any>();
 
   return (
     <div
@@ -28,20 +29,25 @@ export const BlogSidebar = ({
         <DDAuthor
           author={author.name}
           imgSrc={author.image.url}
-          role={author.slug}
+          role={author.role}
         />
       </div>
 
       <DDText size="small" caps>
-        {store.ddLanguage === languages.spanish ? "sumario" : "summary"}
+        {store.ddLanguage === languages.spanish ? "índice" : "summary"}
       </DDText>
       <DDText>
         <div className="md:space-y-5 lg:space-y-7">
           {summaryLinks.map((_: string, index: number) => (
             <div
               key={index}
-              className={`cursor-pointer hover:text-primary`}
+              className={`cursor-pointer hover:text-primary ${
+                typeof currentIndex === "number" && currentIndex === index
+                  ? "text-primary"
+                  : "text-text"
+              }`}
               onClick={() => {
+                setCurrentIndex(index);
                 document
                   .getElementById(_.split(" ").join("-"))
                   ?.scrollIntoView({ behavior: "smooth", block: "center" });

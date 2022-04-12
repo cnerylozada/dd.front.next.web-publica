@@ -18,10 +18,10 @@ import {
 import ReactMarkdown from "react-markdown";
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
-import { getBlogs, getBlogBySlug } from "@/services";
+import { getBlogs, getBlogBySlug, getCoWorkerRoleById } from "@/services";
 import { BlogSidebar } from "@/components";
 import { useStore } from "../../store";
-import { typeArticle } from "@/utils";
+import { typeArticle, languages } from "@/utils";
 
 export const getStaticPaths = async () => {
   const blogs = await getBlogs();
@@ -36,8 +36,14 @@ export const getStaticPaths = async () => {
 };
 export async function getStaticProps(context: any) {
   const article = await getBlogBySlug(context.params.slug);
+  const role = await getCoWorkerRoleById(article.co_worker.role);
   return {
-    props: { article },
+    props: {
+      article: {
+        ...article,
+        co_worker: { ...article.co_worker, role: role.name },
+      },
+    },
   };
 }
 
@@ -81,18 +87,21 @@ const Article = ({ article }: { article: any }) => {
                 {article.title}
               </DDText>
 
-              <DDText className="mb-4 italic">
-                {new Date(article.updated_at).toLocaleDateString("es-ES", {
-                  day: "2-digit",
-                  month: "long",
-                  year: "numeric",
-                })}
+              <DDText className="mb-4 italic" weight="light">
+                {new Date(article.updated_at).toLocaleDateString(
+                  store.ddLanguage === languages.spanish ? "es-ES" : "en-US",
+                  {
+                    day: "2-digit",
+                    month: "long",
+                    year: "numeric",
+                  }
+                )}
               </DDText>
 
               <DDAuthor
                 author={article.co_worker.name}
                 imgSrc={article.co_worker.image.url}
-                role={article.co_worker.slug}
+                role={article.co_worker.role}
                 orientation="horizontal"
               />
             </div>

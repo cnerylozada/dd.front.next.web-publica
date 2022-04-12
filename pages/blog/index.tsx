@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { DDText, DDArticle } from "@cnerylozada/dd.front.react.wp.library";
 import { useStore } from "../../store";
 import { getBlogs } from "@/services";
-import { typeArticle } from "@/utils";
+import { typeArticle, languages } from "@/utils";
 
 export async function getStaticProps() {
   const blogs = await getBlogs();
@@ -43,6 +43,9 @@ const Blog = ({ blogs }: { blogs: any }) => {
               <DDArticle
                 key={index}
                 date={_.updated_at}
+                localDate={
+                  store.ddLanguage === languages.spanish ? "es-ES" : "en-US"
+                }
                 author={_.co_worker.name}
                 title={_.title}
                 type={typeArticle[`${_.Type}_${store.ddLanguage}`]}
