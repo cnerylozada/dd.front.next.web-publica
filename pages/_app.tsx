@@ -44,7 +44,7 @@ const WrapperApp = ({ children }: { children: any }) => {
           name="author"
           content="César Contreras - Marlis Mejías - Estefanía Ishisaka"
         />
-        <meta property="og:url" content="https://www.dynamicdevs.io/" />
+        <meta property="og:url" content="https://metatags.io/"></meta>
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
