@@ -58,7 +58,7 @@ const WrapperApp = ({ children }: { children: any }) => {
           property="og:image"
           content="https://assets.dynamicdevs.io/web/logo.png"
         />
-
+        <meta content="summary_large_image" property="twitter:card" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Script
